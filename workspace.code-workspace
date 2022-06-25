@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../obs/trace-test/trace-test"
+		},
+		{
+			"path": "../../obs/trace-test/trace-test-frontend"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
