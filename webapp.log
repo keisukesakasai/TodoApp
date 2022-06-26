@@ -607,3 +607,1051 @@ net/http.(*conn).serve(0xc000238280, {0x451e960, 0xc0000a3320})
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 13:59:37 server.go:3160: http: panic serving [::1]:59276: open app/views/templates/private_tavbar.html: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4463620, 0xc0000904e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x45204d8, 0xc0000b8000}, {0x0, 0x0}, {0xc00016ba08, 0x3, 0xc00016bb70})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:17 +0xf9
+TodoApp/app/controllers.todoNew({0x45204d8, 0xc0000b8000}, 0x0)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0x0, {0x45204d8, 0xc0000b8000}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x45204d8, 0xc0000b8000}, 0xc0000a4000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007b410}, {0x45204d8, 0xc0000b8000}, 0xc0000a4000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000116e60, {0x4521fe0, 0xc00007b320})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 13:59:37 server.go:3160: http: panic serving [::1]:59278: open app/views/templates/private_tavbar.html: no such file or directory
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4463620, 0xc0000908a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x45204d8, 0xc0000b80e0}, {0x0, 0x0}, {0xc000101a08, 0x3, 0xc00004bb70})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:17 +0xf9
+TodoApp/app/controllers.todoNew({0x45204d8, 0xc0000b80e0}, 0x0)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0x0, {0x45204d8, 0xc0000b80e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x45204d8, 0xc0000b80e0}, 0xc0001d2000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018aa20}, {0x45204d8, 0xc0000b80e0}, 0xc0001d2000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ce000, {0x4521fe0, 0xc00007b320})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 13:59:38 server.go:3160: http: panic serving [::1]:59280: open app/views/templates/private_tavbar.html: no such file or directory
+goroutine 23 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4463620, 0xc00018ae70})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x45204d8, 0xc0001881c0}, {0x0, 0x0}, {0xc0001d9a08, 0x3, 0xc00004cb70})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:17 +0xf9
+TodoApp/app/controllers.todoNew({0x45204d8, 0xc0001881c0}, 0x0)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0x0, {0x45204d8, 0xc0001881c0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x45204d8, 0xc0001881c0}, 0xc0001d2100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018aae0}, {0x45204d8, 0xc0001881c0}, 0xc0001d2100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ce0a0, {0x4521fe0, 0xc00007b320})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 13:59:43 server.go:3160: http: panic serving [::1]:59285: open app/views/templates/private_tavbar.html: no such file or directory
+goroutine 26 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4463620, 0xc00018b2c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x45204d8, 0xc0001882a0}, {0x0, 0x0}, {0xc0001d9a08, 0x3, 0xc00004cb70})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:17 +0xf9
+TodoApp/app/controllers.todoNew({0x45204d8, 0xc0001882a0}, 0x0)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0x0, {0x45204d8, 0xc0001882a0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x45204d8, 0xc0001882a0}, 0xc0001d2400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018af30}, {0x45204d8, 0xc0001882a0}, 0xc0001d2400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ce140, {0x4521fe0, 0xc00007b320})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:36 server.go:3160: http: panic serving [::1]:60201: template: todo_edit.html:2: missing value for command
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00029a6f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00029e2a0}, {0x4481660, 0xc0002986c0}, {0xc00012b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00029e2a0}, 0xc00012ba30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00029e2a0}, 0xc00024e900)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00029e2a0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00029e2a0}, 0xc00024e900)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000a34d0}, {0x451fe58, 0xc00029e2a0}, 0xc00024e900)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c6fa0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:36 server.go:3160: http: panic serving [::1]:60221: template: todo_edit.html:2: missing value for command
+goroutine 86 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00021b2b0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000204e00}, {0x4481660, 0xc000219740}, {0xc00009b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000204e00}, 0xc00025ea30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000204e00}, 0xc00024ea00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000204e00}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000204e00}, 0xc00024ea00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000257110}, {0x451fe58, 0xc000204e00}, 0xc00024ea00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000258000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:37 server.go:3160: http: panic serving [::1]:60222: template: todo_edit.html:2: missing value for command
+goroutine 75 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00029a9e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00029e380}, {0x4481660, 0xc000298b40}, {0xc0002e9890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00029e380}, 0xc00025aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00029e380}, 0xc0002c6300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00029e380}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00029e380}, 0xc0002c6300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002873b0}, {0x451fe58, 0xc00029e380}, 0xc0002c6300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002e2000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:37 server.go:3160: http: panic serving [::1]:60224: template: todo_edit.html:2: missing value for command
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000099a00})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000112460}, {0x4481660, 0xc0000d90c0}, {0xc0000a1890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000112460}, 0xc00004aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000112460}, 0xc0000ce700)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000112460}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000112460}, 0xc0000ce700)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000132900}, {0x451fe58, 0xc000112460}, 0xc0000ce700)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c7040, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:38 server.go:3160: http: panic serving [::1]:60225: template: todo_edit.html:2: missing value for command
+goroutine 59 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000099ce0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000112540}, {0x4481660, 0xc0000d94c0}, {0xc0000a1890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000112540}, 0xc00004fa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000112540}, 0xc000182c00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000112540}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000112540}, 0xc000182c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001a9260}, {0x451fe58, 0xc000112540}, 0xc000182c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ae000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:39 server.go:3160: http: panic serving [::1]:60227: template: todo_edit.html:2: missing value for command
+goroutine 80 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00029acd0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00029e460}, {0x4481660, 0xc000298fc0}, {0xc0002e9890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00029e460}, 0xc00025aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00029e460}, 0xc0002c6400)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00029e460}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00029e460}, 0xc0002c6400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000287b60}, {0x451fe58, 0xc00029e460}, 0xc0002c6400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002e20a0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:44 server.go:3160: http: panic serving [::1]:60240: template: todo_edit.html:2: missing value for command
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000099340})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001120e0}, {0x4481660, 0xc0000d8740}, {0xc0000a1890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001120e0}, 0xc0000a1a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001120e0}, 0xc0000ce100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001120e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001120e0}, 0xc0000ce100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000a34d0}, {0x451fe58, 0xc0001120e0}, 0xc0000ce100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c6fa0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:46 server.go:3160: http: panic serving [::1]:60242: template: todo_edit.html:2: missing value for command
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000099630})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001121c0}, {0x4481660, 0xc0000d8c00}, {0xc0000a1890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001121c0}, 0xc00004aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001121c0}, 0xc0000ce200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001121c0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001121c0}, 0xc0000ce200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000a3ce0}, {0x451fe58, 0xc0001121c0}, 0xc0000ce200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c7040, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:51 server.go:3160: http: panic serving [::1]:60245: template: todo_edit.html:2: missing value for command
+goroutine 5 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00019c3d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000188380}, {0x4481660, 0xc00019a200}, {0xc000129890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000188380}, 0xc000129a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000188380}, 0xc000078300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000188380}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000188380}, 0xc000078300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000074090}, {0x451fe58, 0xc000188380}, 0xc000078300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000076000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:51 server.go:3160: http: panic serving [::1]:60248: template: todo_edit.html:2: missing value for command
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00019c6c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000188460}, {0x4481660, 0xc00019a680}, {0xc000305890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000188460}, 0xc0001f4a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000188460}, 0xc0001a2400)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000188460}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000188460}, 0xc0001a2400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018a960}, {0x451fe58, 0xc000188460}, 0xc0001a2400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ee000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:52 server.go:3160: http: panic serving [::1]:60250: template: todo_edit.html:2: missing value for command
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0002922d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0002ac000}, {0x4481660, 0xc000290200}, {0xc000301890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0002ac000}, 0xc0001f0a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0002ac000}, 0xc000294000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0002ac000}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0002ac000}, 0xc000294000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002820f0}, {0x451fe58, 0xc0002ac000}, 0xc000294000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00028a000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:22:57 server.go:3160: http: panic serving [::1]:60255: template: todo_edit.html:2: missing value for command
+goroutine 45 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00019c9b0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000188540}, {0x4481660, 0xc00019ab00}, {0xc000305890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000188540}, 0xc0001f4a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000188540}, 0xc0001a2600)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000188540}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000188540}, 0xc0001a2600)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018b110}, {0x451fe58, 0xc000188540}, 0xc0001a2600)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ee0a0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:27 server.go:3160: http: panic serving [::1]:60274: template: todo_edit.html:2: missing value for command
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00019cca0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000188620}, {0x4481660, 0xc00019afc0}, {0xc000305890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000188620}, 0xc0001f4a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000188620}, 0xc0001a2800)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000188620}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000188620}, 0xc0001a2800)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018b8c0}, {0x451fe58, 0xc000188620}, 0xc0001a2800)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001ee140, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:34 server.go:3160: http: panic serving [::1]:60286: template: todo_edit.html:2: missing value for command
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000013360})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001560e0}, {0x4481660, 0xc000062780}, {0xc000107890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001560e0}, 0xc000107a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001560e0}, 0xc00011c100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001560e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001560e0}, 0xc00011c100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007b4d0}, {0x451fe58, 0xc0001560e0}, 0xc00011c100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000116fa0, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:34 server.go:3160: http: panic serving [::1]:60289: template: todo_edit.html:2: missing value for command
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000013650})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001561c0}, {0x4481660, 0xc000062c40}, {0xc000107890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001561c0}, 0xc00004fa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001561c0}, 0xc00011c200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001561c0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001561c0}, 0xc00011c200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bce0}, {0x451fe58, 0xc0001561c0}, 0xc00011c200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000117040, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:35 server.go:3160: http: panic serving [::1]:60290: template: todo_edit.html:2: missing value for command
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000013940})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001562a0}, {0x4481660, 0xc0000630c0}, {0xc000107890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001562a0}, 0xc00004fa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001562a0}, 0xc00011c300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001562a0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001562a0}, 0xc00011c300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00017e4b0}, {0x451fe58, 0xc0001562a0}, 0xc00011c300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001170e0, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:36 server.go:3160: http: panic serving [::1]:60292: template: todo_edit.html:2: missing value for command
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0001962d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001b0000}, {0x4481660, 0xc000194200}, {0xc000101890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001b0000}, 0xc00004ba30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001b0000}, 0xc000198000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001b0000}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001b0000}, 0xc000198000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018a090}, {0x451fe58, 0xc0001b0000}, 0xc000198000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00018e000, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:41 server.go:3160: http: panic serving [::1]:60297: template: todo_edit.html:2: missing value for command
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00022c2d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00024a000}, {0x4481660, 0xc00022a200}, {0xc000255890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00024a000}, 0xc000224a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00024a000}, 0xc00022e000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00024a000}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00024a000}, 0xc00022e000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000218090}, {0x451fe58, 0xc00024a000}, 0xc00022e000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00021c000, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:48 server.go:3160: http: panic serving [::1]:60304: template: todo_edit.html:4: missing value for command
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0000a02f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0000bc000}, {0x4481660, 0xc00009e200}, {0xc000251890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0000bc000}, 0xc000220a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0000bc000}, 0xc0000a2000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0000bc000}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0000bc000}, 0xc0000a2000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000094090}, {0x451fe58, 0xc0000bc000}, 0xc0000a2000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000098000, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:48 server.go:3160: http: panic serving [::1]:60305: template: todo_edit.html:4: missing value for command
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0001965e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001b00e0}, {0x4481660, 0xc000194680}, {0xc000101890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001b00e0}, 0xc00004ba30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001b00e0}, 0xc000198100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001b00e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001b00e0}, 0xc000198100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018a8d0}, {0x451fe58, 0xc0001b00e0}, 0xc000198100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00018e0a0, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:51 server.go:3160: http: panic serving [::1]:60308: template: todo_edit.html:4: missing value for command
+goroutine 44 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000013d00})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000156540}, {0x4481660, 0xc000063500}, {0xc00016b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000156540}, 0xc00016ba30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000156540}, 0xc0000a2300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000156540}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000156540}, 0xc0000a2300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018b140}, {0x451fe58, 0xc000156540}, 0xc0000a2300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00018e140, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:23:51 server.go:3160: http: panic serving [::1]:60309: template: todo_edit.html:4: missing value for command
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0002d8010})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000156620}, {0x4481660, 0xc0000639c0}, {0xc000107890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000156620}, 0xc00004fa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000156620}, 0xc00011c700)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000156620}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000156620}, 0xc00011c700)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00017f560}, {0x451fe58, 0xc000156620}, 0xc00011c700)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000117180, {0x45219a0, 0xc00007b3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:24:03 server.go:3160: http: panic serving [::1]:60316: template: todo_edit.html:4: missing value for command
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00014a2f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000112a80}, {0x4481660, 0xc0000d9c00}, {0xc00012d890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000112a80}, 0xc00012da30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000112a80}, 0xc000180800)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000112a80}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000112a80}, 0xc000180800)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000a34d0}, {0x451fe58, 0xc000112a80}, 0xc000180800)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c6fa0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:24:03 server.go:3160: http: panic serving [::1]:60319: template: todo_edit.html:4: missing value for command
+goroutine 70 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00014a5f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000112b60}, {0x4481660, 0xc000168040}, {0xc0000a1890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000112b60}, 0xc00004fa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000112b60}, 0xc000180900)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000112b60}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000112b60}, 0xc000180900)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019c600}, {0x451fe58, 0xc000112b60}, 0xc000180900)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a0000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:24:04 server.go:3160: http: panic serving [::1]:60321: template: todo_edit.html:4: missing value for command
+goroutine 64 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00014a900})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000112c40}, {0x4481660, 0xc000168500}, {0xc0000a1890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000112c40}, 0xc00004fa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000112c40}, 0xc0000cf000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000112c40}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000112c40}, 0xc0000cf000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000147560}, {0x451fe58, 0xc000112c40}, 0xc0000cf000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c7040, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:24:09 server.go:3160: http: panic serving [::1]:60326: template: todo_edit.html:4: missing value for command
+goroutine 71 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000012f90})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000074c40}, {0x4481660, 0xc000063340}, {0xc00009b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000074c40}, 0xc000050a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000074c40}, 0xc000180a00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000074c40}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000074c40}, 0xc000180a00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019c6f0}, {0x451fe58, 0xc000074c40}, 0xc000180a00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a00a0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:24:30 server.go:3160: http: panic serving [::1]:60342: template: todo_edit.html:4: missing value for command
+goroutine 76 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0000132a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000074d20}, {0x4481660, 0xc000063840}, {0xc00009b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000074d20}, 0xc000050a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000074d20}, 0xc000180c00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000074d20}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000074d20}, 0xc000180c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019cf60}, {0x451fe58, 0xc000074d20}, 0xc000180c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a0140, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:24:31 server.go:3160: http: panic serving [::1]:60344: template: todo_edit.html:4: missing value for command
+goroutine 44 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00021a940})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000204620}, {0x4481660, 0xc000218a40}, {0xc000263890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000204620}, 0xc00025aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000204620}, 0xc00024e600)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000204620}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000204620}, 0xc00024e600)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000207350}, {0x451fe58, 0xc000204620}, 0xc00024e600)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000254000, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:25:01 server.go:3160: http: panic serving [::1]:60367: template: todo_edit.html:4: missing value for command
+goroutine 49 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00021ac50})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000204700}, {0x4481660, 0xc000218f00}, {0xc000263890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000204700}, 0xc00025aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000204700}, 0xc00024e700)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000204700}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000204700}, 0xc00024e700)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000207bf0}, {0x451fe58, 0xc000204700}, 0xc00024e700)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002540a0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:25:55 server.go:3160: http: panic serving [::1]:60406: template: todo_edit.html:4: missing value for command
+goroutine 102 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00021af60})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0002047e0}, {0x4481660, 0xc0002193c0}, {0xc000263890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0002047e0}, 0xc00025aa30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0002047e0}, 0xc00024e800)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0002047e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0002047e0}, 0xc00024e800)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000380480}, {0x451fe58, 0xc0002047e0}, 0xc00024e800)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000254140, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:25:55 server.go:3160: http: panic serving [::1]:60408: template: todo_edit.html:4: missing value for command
+goroutine 81 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0000135b0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000074e00}, {0x4481660, 0xc000063d00}, {0xc00009b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000074e00}, 0xc000050a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000074e00}, 0xc000180d00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000074e00}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000074e00}, 0xc000180d00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019d7d0}, {0x451fe58, 0xc000074e00}, 0xc000180d00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a01e0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:25:56 server.go:3160: http: panic serving [::1]:60409: template: todo_edit.html:4: missing value for command
+goroutine 118 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc0000138c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000074ee0}, {0x4481660, 0xc0001f81c0}, {0xc00009b890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000074ee0}, 0xc000050a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000074ee0}, 0xc000180e00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000074ee0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000074ee0}, 0xc000180e00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001f6060}, {0x451fe58, 0xc000074ee0}, 0xc000180e00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a0280, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:25:59 server.go:3160: http: panic serving [::1]:60412: template: todo_edit.html:4: missing value for command
+goroutine 123 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc000428080})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0000750a0}, {0x4481660, 0xc0001f8dc0}, {0xc0001a9890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0000750a0}, 0xc0001a9a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0000750a0}, 0xc00024ec00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0000750a0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0000750a0}, 0xc00024ec00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001f68d0}, {0x451fe58, 0xc0000750a0}, 0xc00024ec00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a0320, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:25:59 server.go:3160: http: panic serving [::1]:60414: template: todo_edit.html:4: missing value for command
+goroutine 150 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x44515c0, 0xc00014aa20})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00028c1c0}, {0x4481660, 0xc00029e3c0}, {0xc00025f890, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00028c1c0}, 0xc000050a30, 0x40bd326)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:78 +0x391
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00028c1c0}, 0xc000181200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:49 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00028c1c0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00028c1c0}, 0xc000181200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00042a1e0}, {0x451fe58, 0xc00028c1c0}, 0xc000181200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a03c0, {0x45219a0, 0xc0000a33e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:26:29 server.go:3160: http: panic serving [::1]:60439: template: todo_edit.html:4: missing value for command
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4451560, 0xc0000a3360})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00019a0e0}, {0x4481600, 0xc0000e0780}, {0xc0000ab878, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00019a0e0}, 0xc0000aba28, 0x1)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:85 +0x465
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00019a0e0}, 0xc0000d6100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:45 +0xdd
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00019a0e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00019a0e0}, 0xc0000d6100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000ad4d0}, {0x451fe58, 0xc00019a0e0}, 0xc0000d6100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000cefa0, {0x45219a0, 0xc0000ad3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:26:30 server.go:3160: http: panic serving [::1]:60441: template: todo_edit.html:4: missing value for command
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4451560, 0xc00011e2f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc000138000}, {0x4481600, 0xc00011c280}, {0xc0000a5878, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc000138000}, 0xc000107a28, 0x1)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:85 +0x465
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc000138000}, 0xc000122000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:45 +0xdd
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc000138000}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc000138000}, 0xc000122000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000110090}, {0x451fe58, 0xc000138000}, 0xc000122000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000114000, {0x45219a0, 0xc0000ad3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:26:31 server.go:3160: http: panic serving [::1]:60442: template: todo_edit.html:4: missing value for command
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4451560, 0xc00011e600})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc0001380e0}, {0x4481600, 0xc00011c7c0}, {0xc0000a5878, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc0001380e0}, 0xc000107a28, 0x1)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:85 +0x465
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc0001380e0}, 0xc000122300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:45 +0xdd
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc0001380e0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc0001380e0}, 0xc000122300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000110990}, {0x451fe58, 0xc0001380e0}, 0xc000122300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001140a0, {0x45219a0, 0xc0000ad3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:26:31 server.go:3160: http: panic serving [::1]:60443: template: todo_edit.html:4: missing value for command
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4451560, 0xc0000a3670})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00019a1c0}, {0x4481600, 0xc0000e0cc0}, {0xc0000ab878, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00019a1c0}, 0xc00004aa28, 0x1)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:85 +0x465
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00019a1c0}, 0xc0000d6300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:45 +0xdd
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00019a1c0}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00019a1c0}, 0xc0000d6300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000ade00}, {0x451fe58, 0xc00019a1c0}, 0xc0000d6300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000cf040, {0x45219a0, 0xc0000ad3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:26:37 server.go:3160: http: panic serving [::1]:60444: template: todo_edit.html:4: missing value for command
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4451560, 0xc00030e470})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00019ac40}, {0x4481600, 0xc0000e1f40}, {0xc000179878, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00019ac40}, 0xc000179a28, 0x1)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:85 +0x465
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00019ac40}, 0xc000122c00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:45 +0xdd
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00019ac40}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00019ac40}, 0xc000122c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d66f0}, {0x451fe58, 0xc00019ac40}, 0xc000122c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000cf0e0, {0x45219a0, 0xc0000ad3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 14:26:37 server.go:3160: http: panic serving [::1]:60446: template: todo_edit.html:4: missing value for command
+goroutine 82 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4451560, 0xc00030e770})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+text/template.Must(...)
+	/usr/local/Cellar/go/1.17.6/libexec/src/text/template/helper.go:25
+TodoApp/app/controllers.generateHTML({0x451fe58, 0xc00019ad20}, {0x4481600, 0xc0003123c0}, {0xc00032d878, 0x3, 0x10})
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:19 +0xf9
+TodoApp/app/controllers.todoEdit({0x451fe58, 0xc00019ad20}, 0xc000102a28, 0x1)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:85 +0x465
+TodoApp/app/controllers.parseURL.func1({0x451fe58, 0xc00019ad20}, 0xc000214000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:45 +0xdd
+net/http.HandlerFunc.ServeHTTP(0x0, {0x451fe58, 0xc00019ad20}, 0x0)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x451fe58, 0xc00019ad20}, 0xc000214000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002020f0}, {0x451fe58, 0xc00019ad20}, 0xc000214000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00020a000, {0x45219a0, 0xc0000ad3e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
