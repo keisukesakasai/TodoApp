@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"TodoApp/app/models"
-	"fmt"
 	"log"
 	"net/http"
 )
@@ -81,7 +80,6 @@ func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
 		if err != nil {
 			log.Fatalln(err)
 		}
-		fmt.Println(t)
 		generateHTML(w, t, "layout", "private_navbar", "todo_edit")
 	}
 }

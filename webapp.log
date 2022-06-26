@@ -1655,3 +1655,5 @@ net/http.(*conn).serve(0xc00020a000, {0x45219a0, 0xc0000ad3e0})
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/26 16:51:27 route_auth.go:48: dial tcp: lookup postgresql.prod.svc.cluster.local: no such host
+2022/06/26 16:51:27 server.go:3160: http: superfluous response.WriteHeader call from TodoApp/app/controllers.authenticate (route_auth.go:66)
