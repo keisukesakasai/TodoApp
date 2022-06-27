@@ -8,10 +8,17 @@ import (
 
 func signup(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
+		ctx := r.Context()
+		ctx, span := tracer.Start(ctx, "signup")
+		defer span.End()
+
 		_, err := session(w, r)
 		if err != nil {
-			generateHTML(w, nil, "layout", "signup", "public_navbar")
+			generateHTML(ctx, w, nil, "layout", "signup", "public_navbar")
 		} else {
+			ctx := r.Context()
+			ctx, span := tracer.Start(ctx, "redirect")
+			defer span.End()
 			http.Redirect(w, r, "/todos", 302)
 		}
 	} else if r.Method == "POST" {
@@ -27,25 +34,41 @@ func signup(w http.ResponseWriter, r *http.Request) {
 		if err := user.CreateUser(); err != nil {
 			log.Println(err)
 		}
-
+		ctx := r.Context()
+		ctx, span := tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/", 302)
 	}
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "login")
+	defer span.End()
+
 	_, err := session(w, r)
 	if err != nil {
-		generateHTML(w, nil, "layout", "login", "public_navbar")
+		generateHTML(ctx, w, nil, "layout", "login", "public_navbar")
 	} else {
+		ctx := r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
 
 func authenticate(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "authenticate")
+	defer span.End()
+
 	err := r.ParseForm()
 	user, err := models.GetUserByEmail(r.PostFormValue("email"))
 	if err != nil {
 		log.Println(err)
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	}
 	if user.PassWord == models.Encrypt(r.PostFormValue("password")) {
@@ -68,6 +91,10 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 }
 
 func logout(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "logout")
+	defer span.End()
+
 	cookie, err := r.Cookie("_cookie")
 	if err != nil {
 		log.Println(err)

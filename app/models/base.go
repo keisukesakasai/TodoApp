@@ -1,19 +1,28 @@
 package models
 
 import (
+	"TodoApp/config"
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
 	"log"
 
 	"github.com/google/uuid"
-	_ "github.com/lib/pq"
+	//_ "github.com/lib/pq"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var Db *sql.DB
 
 var err error
 
+const (
+	tableNameUser    = "users"
+	tableNameTodo    = "todos"
+	tableNameSession = "sessions"
+)
+
+/*
 func init() {
 	fmt.Println("Now migration...")
 	Db, err = sql.Open("postgres", "host=postgresql.prod.svc.cluster.local port=5432 user=postgres dbname=postgres password=postgres sslmode=disable")
@@ -48,6 +57,43 @@ func init() {
 		created_at timestamp)`, "sessions")
 
 	Db.Exec(cmdS)
+}
+*/
+
+func init() {
+	fmt.Println("initializing...")
+	Db, err = sql.Open("sqlite3", config.Config.DbName)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		uuid STRING NOT NULL UNIQUE,
+		name STRING,
+		email STRING,
+		password STRING,
+		created_at DATETIME)`, tableNameUser)
+
+	Db.Exec(cmdU)
+
+	cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		content TEXT,
+		user_id INTEGER,
+		created_at DATETIME)`, tableNameTodo)
+
+	Db.Exec(cmdT)
+
+	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		uuid STRING NOT NULL UNIQUE,
+		email STRING,
+		user_id INTEGER,
+		created_at DATETIME)`, tableNameSession)
+
+	Db.Exec(cmdS)
+	fmt.Println("initializing...DONE!!!!")
 }
 
 func createUUID() (uuidobj uuid.UUID) {

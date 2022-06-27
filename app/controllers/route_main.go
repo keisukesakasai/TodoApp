@@ -7,18 +7,43 @@ import (
 )
 
 func top(w http.ResponseWriter, r *http.Request) {
+	/*
+		fmt.Println("fuck!!!!")
+		ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+		defer stop()
+
+		cleanup, err := SetupTraceProvider(10 * time.Second)
+		if err != nil {
+			panic(err)
+		}
+		defer cleanup()
+	*/
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "top")
+	defer span.End()
+
 	_, err := session(w, r)
 	if err != nil {
-		generateHTML(w, "hello", "layout", "top", "public_navbar")
+		generateHTML(ctx, w, "hello", "top", "layout", "top", "public_navbar")
 	} else {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "index")
+	defer span.End()
+
 	sess, err := session(w, r)
 	if err != nil {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/", 302)
 	} else {
 		user, err := sess.GetUserBySession()
@@ -27,22 +52,36 @@ func index(w http.ResponseWriter, r *http.Request) {
 		}
 		todos, _ := user.GetTodosByUser()
 		user.Todos = todos
-		generateHTML(w, user, "layout", "private_navbar", "index")
+		generateHTML(ctx, w, user, "index", "layout", "private_navbar", "index")
 	}
 }
 
 func todoNew(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "todoNew")
+	defer span.End()
+
 	_, err := session(w, r)
 	if err != nil {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
-		generateHTML(w, nil, "layout", "private_navbar", "todo_new")
+		generateHTML(ctx, w, nil, "todoNew", "layout", "private_navbar", "todo_new")
 	}
 }
 
 func todoSave(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "todoSave")
+	defer span.End()
+
 	sess, err := session(w, r)
 	if err != nil {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
 		err = r.ParseForm()
@@ -57,14 +96,23 @@ func todoSave(w http.ResponseWriter, r *http.Request) {
 		if err := user.CreateTodo(content); err != nil {
 			log.Println(err)
 		}
-
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
 
 func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "todoEdit")
+	defer span.End()
+
 	sess, err := session(w, r)
 	if err != nil {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
 		err = r.ParseForm()
@@ -80,13 +128,20 @@ func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
 		if err != nil {
 			log.Fatalln(err)
 		}
-		generateHTML(w, t, "layout", "private_navbar", "todo_edit")
+		generateHTML(ctx, w, t, "todoEdit", "layout", "private_navbar", "todo_edit")
 	}
 }
 
 func todoUpdate(w http.ResponseWriter, r *http.Request, id int) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "todoUpdate")
+	defer span.End()
+
 	sess, err := session(w, r)
 	if err != nil {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
 		err := r.ParseForm()
@@ -102,13 +157,23 @@ func todoUpdate(w http.ResponseWriter, r *http.Request, id int) {
 		if err := t.UpdateTodo(); err != nil {
 			log.Println(err)
 		}
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
 
 func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
+	ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "todoDelete")
+	defer span.End()
+
 	sess, err := session(w, r)
 	if err != nil {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
 		_, err := sess.GetUserBySession()
@@ -122,6 +187,9 @@ func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
 		if err := t.DeleteTodo(); err != nil {
 			log.Println(err)
 		}
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
