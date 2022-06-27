@@ -1,7 +1,6 @@
 package models
 
 import (
-	"TodoApp/config"
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
@@ -22,7 +21,6 @@ const (
 	tableNameSession = "sessions"
 )
 
-/*
 func init() {
 	fmt.Println("Now migration...")
 	Db, err = sql.Open("postgres", "host=postgresql.prod.svc.cluster.local port=5432 user=postgres dbname=postgres password=postgres sslmode=disable")
@@ -57,9 +55,10 @@ func init() {
 		created_at timestamp)`, "sessions")
 
 	Db.Exec(cmdS)
+	fmt.Println("initializing...DONE!!!!")
 }
-*/
 
+/*
 func init() {
 	fmt.Println("initializing...")
 	Db, err = sql.Open("sqlite3", config.Config.DbName)
@@ -95,6 +94,7 @@ func init() {
 	Db.Exec(cmdS)
 	fmt.Println("initializing...DONE!!!!")
 }
+*/
 
 func createUUID() (uuidobj uuid.UUID) {
 	uuidobj, _ = uuid.NewUUID()
