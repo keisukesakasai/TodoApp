@@ -14,7 +14,7 @@ func signup(w http.ResponseWriter, r *http.Request) {
 
 		_, err := session(w, r)
 		if err != nil {
-			generateHTML(ctx, w, nil, "layout", "signup", "public_navbar")
+			generateHTML(ctx, w, nil, "signup", "layout", "signup", "public_navbar")
 		} else {
 			ctx := r.Context()
 			ctx, span := tracer.Start(ctx, "redirect")
@@ -48,7 +48,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 	_, err := session(w, r)
 	if err != nil {
-		generateHTML(ctx, w, nil, "layout", "login", "public_navbar")
+		generateHTML(ctx, w, nil, "login", "layout", "login", "public_navbar")
 	} else {
 		ctx := r.Context()
 		ctx, span = tracer.Start(ctx, "redirect")
@@ -83,9 +83,14 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 			HttpOnly: true,
 		}
 		http.SetCookie(w, &cookie)
-
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/", 302)
 	} else {
+		ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
+		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	}
 }
@@ -104,5 +109,8 @@ func logout(w http.ResponseWriter, r *http.Request) {
 		session := models.Session{UUID: cookie.Value}
 		session.DeleteSessionByUUID()
 	}
+	ctx = r.Context()
+	ctx, span = tracer.Start(ctx, "redirect")
+	defer span.End()
 	http.Redirect(w, r, "/login", 302)
 }

@@ -7,17 +7,6 @@ import (
 )
 
 func top(w http.ResponseWriter, r *http.Request) {
-	/*
-		fmt.Println("fuck!!!!")
-		ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
-		defer stop()
-
-		cleanup, err := SetupTraceProvider(10 * time.Second)
-		if err != nil {
-			panic(err)
-		}
-		defer cleanup()
-	*/
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "top")
 	defer span.End()
