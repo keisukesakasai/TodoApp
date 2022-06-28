@@ -66,7 +66,6 @@ func initProvider() (func(context.Context) error, error) {
 		sdktrace.WithSpanProcessor(bsp),
 	)
 	otel.SetTracerProvider(tracerProvider)
-
 	otel.SetTextMapPropagator(propagation.TraceContext{})
 
 	return tracerProvider.Shutdown, nil
@@ -95,7 +94,7 @@ func tracerProvider(url string) (*tracesdk.TracerProvider, error) {
 */
 
 func generateHTML(ctx context.Context, writer http.ResponseWriter, data interface{}, procname string, filenames ...string) {
-	// tracer := otel.Tracer("generateHTML")
+	tracer := otel.Tracer("generateHTML")
 	_, span := tracer.Start(ctx, "generateHTML: "+procname)
 	defer span.End()
 
@@ -108,17 +107,17 @@ func generateHTML(ctx context.Context, writer http.ResponseWriter, data interfac
 	templates.ExecuteTemplate(writer, "layout", data)
 }
 
-func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
-	// tracer := otel.Tracer("session")
-	ctx := r.Context()
-	_, span := tracer.Start(ctx, "session")
+func session(ctx context.Context, w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
+	tracer := otel.Tracer("session")
+	// ctx := r.Context()
+	ctx, span := tracer.Start(ctx, "session")
 	defer span.End()
 
 	cookie, err := r.Cookie("_cookie")
 	if err == nil {
 		sess = models.Session{UUID: cookie.Value}
-		if ok, _ := sess.CheckSession(); !ok {
-			err = fmt.Errorf("Invalid session")
+		if ok, _ := sess.CheckSession(ctx); !ok {
+			err = fmt.Errorf("invalid session")
 		}
 	}
 	return sess, err
@@ -140,7 +139,7 @@ func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc
 }
 
 // --otelcollecotr--
-var tracer = otel.Tracer("TodoApp")
+var tracer = otel.Tracer("controllers")
 
 func StartMainServer() error {
 	fmt.Println("start server" + "port: " + config.Config.Port)
@@ -174,13 +173,13 @@ func StartMainServer() error {
 	http.Handle("/static/", http.StripPrefix("/static/", files))
 	*/
 
-	_, span := tracer.Start(ctx, "httpRequestHandler")
-	defer span.End()
+	// _, span := tracer.Start(ctx, "httpRequestHandler")
+	// defer span.End()
 
 	files := http.FileServer(http.Dir(config.Config.Static))
 	http.Handle("/static/", http.StripPrefix("/static/", files))
 
-	http.HandleFunc("/", top)
+	http.HandleFunc("/", middleware(top))
 	http.HandleFunc("/signup", signup)
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/logout", logout)

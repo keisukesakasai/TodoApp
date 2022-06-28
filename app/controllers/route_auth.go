@@ -15,16 +15,20 @@ func signup(w http.ResponseWriter, r *http.Request) {
 		ctx, span := tracer.Start(ctx, "signup")
 		defer span.End()
 
-		_, err := session(w, r)
+		_, err := session(ctx, w, r)
 		if err != nil {
 			generateHTML(ctx, w, nil, "signup", "layout", "signup", "public_navbar")
 		} else {
 			ctx := r.Context()
-			ctx, span := tracer.Start(ctx, "redirect")
+			_, span := tracer.Start(ctx, "redirect")
 			defer span.End()
-			http.Redirect(w, r, "/todos", 302)
+			http.Redirect(w, r, "/todos", http.StatusFound)
 		}
 	} else if r.Method == "POST" {
+		ctx := r.Context()
+		ctx, span := tracer.Start(ctx, "signup")
+		defer span.End()
+
 		err := r.ParseForm()
 		if err != nil {
 			log.Println(err)
@@ -34,13 +38,15 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			Email:    r.PostFormValue("email"),
 			PassWord: r.PostFormValue("password"),
 		}
-		if err := user.CreateUser(); err != nil {
+		if err := user.CreateUser(ctx); err != nil {
 			log.Println(err)
 		}
-		ctx := r.Context()
-		ctx, span := tracer.Start(ctx, "redirect")
+		// ctx = r.Context()
+		ctx, span = tracer.Start(ctx, "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/", 302)
+
+		r = r.WithContext(ctx)
+		http.Redirect(w, r, "/", http.StatusFound)
 	}
 }
 
@@ -50,14 +56,14 @@ func login(w http.ResponseWriter, r *http.Request) {
 	ctx, span := tracer.Start(ctx, "login")
 	defer span.End()
 
-	_, err := session(w, r)
+	_, err := session(ctx, w, r)
 	if err != nil {
 		generateHTML(ctx, w, nil, "login", "layout", "login", "public_navbar")
 	} else {
 		ctx := r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/todos", 302)
+		http.Redirect(w, r, "/todos", http.StatusFound)
 	}
 }
 
@@ -67,17 +73,17 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 	ctx, span := tracer.Start(ctx, "authenticate")
 	defer span.End()
 
-	err := r.ParseForm()
-	user, err := models.GetUserByEmail(r.PostFormValue("email"))
+	//err := r.ParseForm()
+	user, err := models.GetUserByEmail(ctx, r.PostFormValue("email"))
 	if err != nil {
 		log.Println(err)
 		ctx = r.Context()
 		ctx, span = tracer.Start(ctx, "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	}
-	if user.PassWord == models.Encrypt(r.PostFormValue("password")) {
-		session, err := user.CreateSession()
+	if user.PassWord == models.Encrypt(ctx, r.PostFormValue("password")) {
+		session, err := user.CreateSession(ctx)
 		if err != nil {
 			log.Println(err)
 		}
@@ -89,14 +95,14 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 		}
 		http.SetCookie(w, &cookie)
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/", 302)
+		http.Redirect(w, r, "/", http.StatusFound)
 	} else {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	}
 }
 
@@ -113,10 +119,10 @@ func logout(w http.ResponseWriter, r *http.Request) {
 
 	if err != http.ErrNoCookie {
 		session := models.Session{UUID: cookie.Value}
-		session.DeleteSessionByUUID()
+		session.DeleteSessionByUUID(ctx)
 	}
 	ctx = r.Context()
-	ctx, span = tracer.Start(ctx, "redirect")
+	_, span = tracer.Start(ctx, "redirect")
 	defer span.End()
-	http.Redirect(w, r, "/login", 302)
+	http.Redirect(w, r, "/login", http.StatusFound)
 }

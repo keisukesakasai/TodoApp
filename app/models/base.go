@@ -1,6 +1,7 @@
 package models
 
 import (
+	"context"
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
@@ -8,12 +9,15 @@ import (
 
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
+	"go.opentelemetry.io/otel"
 	// _ "github.com/mattn/go-sqlite3"
 )
 
 var Db *sql.DB
 
 var err error
+
+var tracer = otel.Tracer("models")
 
 const (
 	tableNameUser    = "users"
@@ -96,12 +100,20 @@ func init() {
 }
 */
 
-func createUUID() (uuidobj uuid.UUID) {
+func createUUID(ctx context.Context) (uuidobj uuid.UUID) {
+	tracer := otel.Tracer("createUUID")
+	ctx, span := tracer.Start(ctx, "createUUID")
+	defer span.End()
+
 	uuidobj, _ = uuid.NewUUID()
 	return uuidobj
 }
 
-func Encrypt(plaintext string) (cryptext string) {
+func Encrypt(ctx context.Context, plaintext string) (cryptext string) {
+	tracer := otel.Tracer("Encrypt")
+	ctx, span := tracer.Start(ctx, "Encrypt")
+	defer span.End()
+
 	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))
 	return cryptext
 }
