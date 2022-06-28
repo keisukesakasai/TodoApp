@@ -7,6 +7,7 @@ import (
 )
 
 func top(w http.ResponseWriter, r *http.Request) {
+	// tracer := otel.Tracer("top")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "top")
 	defer span.End()
@@ -16,7 +17,7 @@ func top(w http.ResponseWriter, r *http.Request) {
 		generateHTML(ctx, w, "hello", "top", "layout", "top", "public_navbar")
 	} else {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
@@ -24,6 +25,7 @@ func top(w http.ResponseWriter, r *http.Request) {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
+	// tracer := otel.Tracer("index")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "index")
 	defer span.End()
@@ -31,7 +33,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
 	if err != nil {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/", 302)
 	} else {
@@ -46,6 +48,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func todoNew(w http.ResponseWriter, r *http.Request) {
+	// tracer := otel.Tracer("todoNew")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "todoNew")
 	defer span.End()
@@ -53,7 +56,7 @@ func todoNew(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
 	if err != nil {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
@@ -62,14 +65,15 @@ func todoNew(w http.ResponseWriter, r *http.Request) {
 }
 
 func todoSave(w http.ResponseWriter, r *http.Request) {
+	// tracer := otel.Tracer("todoSave")
 	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "todoSave")
+	_, span := tracer.Start(ctx, "todoSave")
 	defer span.End()
 
 	sess, err := session(w, r)
 	if err != nil {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
@@ -86,13 +90,14 @@ func todoSave(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 		}
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
 
 func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
+	// tracer := otel.Tracer("todoEdit")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "todoEdit")
 	defer span.End()
@@ -100,7 +105,7 @@ func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
 	sess, err := session(w, r)
 	if err != nil {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
@@ -122,14 +127,15 @@ func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
 }
 
 func todoUpdate(w http.ResponseWriter, r *http.Request, id int) {
+	// tracer := otel.Tracer("todoUpdate")
 	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "todoUpdate")
+	_, span := tracer.Start(ctx, "todoUpdate")
 	defer span.End()
 
 	sess, err := session(w, r)
 	if err != nil {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
@@ -147,21 +153,22 @@ func todoUpdate(w http.ResponseWriter, r *http.Request, id int) {
 			log.Println(err)
 		}
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
 
 func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
+	// tracer := otel.Tracer("todoDelete")
 	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "todoDelete")
+	_, span := tracer.Start(ctx, "todoDelete")
 	defer span.End()
 
 	sess, err := session(w, r)
 	if err != nil {
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/login", 302)
 	} else {
@@ -177,7 +184,7 @@ func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
 			log.Println(err)
 		}
 		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
+		_, span = tracer.Start(ctx, "redirect")
 		defer span.End()
 		http.Redirect(w, r, "/todos", 302)
 	}

@@ -4,9 +4,12 @@ import (
 	"TodoApp/app/models"
 	"log"
 	"net/http"
+
+	"go.opentelemetry.io/otel"
 )
 
 func signup(w http.ResponseWriter, r *http.Request) {
+	tracer := otel.Tracer("signup")
 	if r.Method == "GET" {
 		ctx := r.Context()
 		ctx, span := tracer.Start(ctx, "signup")
@@ -42,6 +45,7 @@ func signup(w http.ResponseWriter, r *http.Request) {
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
+	// tracer := otel.Tracer("login")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "login")
 	defer span.End()
@@ -58,6 +62,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 }
 
 func authenticate(w http.ResponseWriter, r *http.Request) {
+	tracer := otel.Tracer("authenticate")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "authenticate")
 	defer span.End()
@@ -96,6 +101,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 }
 
 func logout(w http.ResponseWriter, r *http.Request) {
+	tracer := otel.Tracer("logout")
 	ctx := r.Context()
 	ctx, span := tracer.Start(ctx, "logout")
 	defer span.End()

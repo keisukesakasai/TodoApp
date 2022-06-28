@@ -15,20 +15,23 @@ import (
 	"time"
 
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
+// otel collector
 func initProvider() (func(context.Context) error, error) {
 	ctx := context.Background()
 
 	res, err := resource.New(ctx,
 		resource.WithAttributes(
 			// the service name used to display traces in backends
-			semconv.ServiceNameKey.String("test-service"),
+			semconv.ServiceNameKey.String("TodoAPP"),
 		),
 	)
 	if err != nil {
@@ -36,23 +39,25 @@ func initProvider() (func(context.Context) error, error) {
 	}
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
+	//
+	conn, err := grpc.DialContext(ctx, "otel-collector-collector.tracing.svc.cluster.local:4318", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
+	if err != nil {
+		return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
+	}
+
+	// Set up a trace exporter
+	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create trace exporter: %w", err)
+	}
+
 	/*
-		conn, err := grpc.DialContext(ctx, "localhost:30080", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
-		if err != nil {
-			return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
-		}
+		traceExporter, err := stdouttrace.New(
+			stdouttrace.WithPrettyPrint(),
+			stdouttrace.WithWriter(os.Stderr),
 
-		// Set up a trace exporter
-		traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
-		if err != nil {
-			return nil, fmt.Errorf("failed to create trace exporter: %w", err)
-		}
+		)
 	*/
-
-	traceExporter, err := stdouttrace.New(
-		stdouttrace.WithPrettyPrint(),
-		stdouttrace.WithWriter(os.Stderr),
-	)
 
 	bsp := sdktrace.NewBatchSpanProcessor(traceExporter)
 	tracerProvider := sdktrace.NewTracerProvider(
@@ -67,8 +72,31 @@ func initProvider() (func(context.Context) error, error) {
 	return tracerProvider.Shutdown, nil
 }
 
+/*
+func tracerProvider(url string) (*tracesdk.TracerProvider, error) {
+	// Create the Jaeger exporter
+	exp, err := jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint(url)))
+	if err != nil {
+		return nil, err
+	}
+	tp := tracesdk.NewTracerProvider(
+		// Always be sure to batch in production.
+		tracesdk.WithBatcher(exp),
+		// Record information about this application in a Resource.
+		tracesdk.WithResource(resource.NewWithAttributes(
+			semconv.SchemaURL,
+			semconv.ServiceNameKey.String("TodoApp"),
+			attribute.String("environment", "GKE"),
+			attribute.Int64("ID", 1),
+		)),
+	)
+	return tp, nil
+}
+*/
+
 func generateHTML(ctx context.Context, writer http.ResponseWriter, data interface{}, procname string, filenames ...string) {
-	ctx, span := tracer.Start(ctx, "generateHTML: "+procname)
+	// tracer := otel.Tracer("generateHTML")
+	_, span := tracer.Start(ctx, "generateHTML: "+procname)
 	defer span.End()
 
 	var files []string
@@ -81,8 +109,9 @@ func generateHTML(ctx context.Context, writer http.ResponseWriter, data interfac
 }
 
 func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
+	// tracer := otel.Tracer("session")
 	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "session")
+	_, span := tracer.Start(ctx, "session")
 	defer span.End()
 
 	cookie, err := r.Cookie("_cookie")
@@ -110,7 +139,8 @@ func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc
 	}
 }
 
-var tracer = otel.Tracer("test-tracer")
+// --otelcollecotr--
+var tracer = otel.Tracer("TodoApp")
 
 func StartMainServer() error {
 	fmt.Println("start server" + "port: " + config.Config.Port)
@@ -118,6 +148,17 @@ func StartMainServer() error {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
 
+	/*
+		tp, err := tracerProvider("jaeger-agent.tracing.svc.cluster.local:6831")
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		otel.SetTracerProvider(tp)
+		tracer := tp.Tracer("TodoApp")
+	*/
+
+	// otel collector
 	shutdown, err := initProvider()
 	if err != nil {
 		log.Fatal(err)
@@ -128,7 +169,12 @@ func StartMainServer() error {
 		}
 	}()
 
-	ctx, span := tracer.Start(ctx, "httpRequestHandler")
+	/* こーするとダメなのなぜ？
+	files := http.FileServer(http.Dir(config.Config.Static))
+	http.Handle("/static/", http.StripPrefix("/static/", files))
+	*/
+
+	_, span := tracer.Start(ctx, "httpRequestHandler")
 	defer span.End()
 
 	files := http.FileServer(http.Dir(config.Config.Static))
