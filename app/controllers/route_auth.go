@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"TodoApp/app/models"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -76,16 +75,11 @@ func authenticate(c *gin.Context) {
 		_, span = tracer.Start(c.Request.Context(), "redirect")
 		defer span.End()
 
-		// http.Redirect(w, r, "/login", http.StatusFound)
-		login(c)
+		http.Redirect(c.Writer, c.Request, "/login", http.StatusFound)
+		// login(c)
 	}
 	if user.PassWord == models.Encrypt(c, c.Request.PostFormValue("password")) {
 		session, err := user.CreateSession(c)
-
-		log.Println(session)
-		log.Println(session.UUID)
-		sessionUUID := session.UUID
-		log.Println(sessionUUID)
 
 		if err != nil {
 			log.Println(err)
@@ -102,16 +96,24 @@ func authenticate(c *gin.Context) {
 		cookie := new(http.Cookie)
 		cookie.Value = session.UUID
 		c.SetSameSite(http.SameSiteNoneMode)
-
-		c.SetCookie("_cookie", cookie.Value, -1, "/", "localhost", true, true)
 		c.SetCookie("_cookie", cookie.Value, 3600, "/", "localhost", true, true)
+
 		// http.SetCookie(c.Writer, &cookie)
-		fmt.Println("===setcookie===")
-		fmt.Println(c.Cookie("_cookie"))
-		fmt.Println(c.Cookie("_cookie"))
-		fmt.Println(c.Cookie("_cookie"))
-		fmt.Println("===setcookie===")
+		/*
+			fmt.Println(session.UUID)
+			c.SetCookie("_cookie", session.UUID, 3600, "/", "localhost", true, true)
+			fmt.Println("===setcookie===")
+			fmt.Println(c.Cookie("_cookie"))
+		*/
 		// ctx = r.Context()
+
+		/*
+			session := sessions.Default(c)
+			session.Set("_cookie", _session.UUID)
+			session.Get("_cookie")
+			fmt.Println("============session===========")
+			fmt.Println(_session.UUID)
+		*/
 
 		_, span = tracer.Start(c.Request.Context(), "redirect")
 		defer span.End()
@@ -122,6 +124,7 @@ func authenticate(c *gin.Context) {
 		// ctx = r.Context()
 		_, span = tracer.Start(c.Request.Context(), "redirect")
 		defer span.End()
+
 		// http.Redirect(w, r, "/login", http.StatusFound)
 		login(c)
 	}

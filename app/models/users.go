@@ -121,8 +121,11 @@ func (u *User) CreateSession(c *gin.Context) (session Session, err error) {
 		email, 
 		user_id, 
 		created_at) values ($1, $2, $3, $4)`
+	_UUID := createUUID(c)
+	fmt.Println("--- createsession ---")
+	fmt.Println(_UUID)
 
-	_, err = Db.Exec(cmd1, createUUID(c), u.Email, u.ID, time.Now())
+	_, err = Db.Exec(cmd1, _UUID, u.Email, u.ID, time.Now())
 	if err != nil {
 		log.Println(err)
 	}
@@ -131,7 +134,8 @@ func (u *User) CreateSession(c *gin.Context) (session Session, err error) {
 	defer span.End()
 
 	cmd2 := `select id, uuid, email, user_id, created_at
-	 from sessions where user_id = $1 and email = $2`
+	 from sessions where user_id = $1 and email = $2
+	 order by created_at desc limit 1`
 
 	err = Db.QueryRow(cmd2, u.ID, u.Email).Scan(
 		&session.ID,
@@ -139,6 +143,9 @@ func (u *User) CreateSession(c *gin.Context) (session Session, err error) {
 		&session.Email,
 		&session.UserID,
 		&session.CreatedAt)
+
+	fmt.Println("--- createsession ---")
+	fmt.Println(_UUID)
 
 	return session, err
 }

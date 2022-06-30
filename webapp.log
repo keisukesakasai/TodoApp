@@ -1983,3 +1983,527 @@ net/http.(*conn).serve(0xc0005c63c0, {0x47e5a00, 0xc0000a2390})
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
 2022/06/29 02:12:09 server.go:200: failed to create gRPC connection to collector: context deadline exceeded
+2022/06/30 21:33:06 server.go:168: failed to create gRPC connection to collector: context deadline exceeded
+2022/06/30 21:42:34 route_auth.go:75: dial tcp: lookup postgresql.prod.svc.cluster.local: no such host
+2022/06/30 21:44:17 base.go:67: sql: unknown driver "sqlite3" (forgotten import?)
+2022/06/30 21:58:56 route_auth.go:85: {4 a40ff682-f62a-11ec-9181-acde48001122 test@exmaple.com 1 2022-06-28 00:05:54.321308 +0900 +0900}
+2022/06/30 21:58:56 route_auth.go:86: a40ff682-f62a-11ec-9181-acde48001122
+2022/06/30 21:58:56 route_auth.go:88: a40ff682-f62a-11ec-9181-acde48001122
+2022/06/30 22:01:12 route_auth.go:85: {5 667a2f12-f874-11ec-bd8e-acde48001122 test@exmaple.com 1 2022-06-30 21:58:56.082244 +0900 +0900}
+2022/06/30 22:01:12 route_auth.go:86: 667a2f12-f874-11ec-bd8e-acde48001122
+2022/06/30 22:01:12 route_auth.go:88: 667a2f12-f874-11ec-bd8e-acde48001122
+2022/06/30 22:03:07 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:03:38 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:03:44 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:04:06 route_auth.go:85: {1 1f7bb95e-f875-11ec-b6b6-acde48001122 test@exmaple.com 2 2022-06-30 22:04:06.470714 +0900 +0900}
+2022/06/30 22:04:06 route_auth.go:86: 1f7bb95e-f875-11ec-b6b6-acde48001122
+2022/06/30 22:04:06 route_auth.go:88: 1f7bb95e-f875-11ec-b6b6-acde48001122
+2022/06/30 22:12:13 route_auth.go:85: {1 1f7bb95e-f875-11ec-b6b6-acde48001122 test@exmaple.com 2 2022-06-30 22:04:06.470714 +0900 +0900}
+2022/06/30 22:12:13 route_auth.go:86: 1f7bb95e-f875-11ec-b6b6-acde48001122
+2022/06/30 22:12:13 route_auth.go:88: 1f7bb95e-f875-11ec-b6b6-acde48001122
+2022/06/30 22:35:55 route_auth.go:86: sql: Scan error on column index 4, name "max(created_at)": unsupported Scan, storing driver.Value type []uint8 into type *time.Time
+2022/06/30 22:38:19 route_auth.go:86: no such column: col
+2022/06/30 22:40:41 route_auth.go:86: no such column: desc
+2022/06/30 22:45:01 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:46:50 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:46:59 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:47:04 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:49:40 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:49:52 route_auth.go:75: sql: no rows in result set
+2022/06/30 22:51:39 route_auth.go:75: sql: no rows in result set
+2022/06/30 23:07:35 server.go:3160: http: panic serving [::1]:56629: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647ce0, 0xc000398ca0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0004ce000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc000398ca0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0004ce180, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc000398ca0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x0)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.authenticate(0xc0004c4000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:112 +0x55b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0004c4000)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000348820, 0xc0004c4000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000348820, {0x47cc310, 0xc0004a2000}, 0xc000226a00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0x47caed8}, {0x47cc310, 0xc0004a2000}, 0xc000226a00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000438140, {0x47d06a0, 0xc000403890})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:07:35 server.go:3160: http: panic serving [::1]:56632: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 41 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647ce0, 0xc0003992a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000272a80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc0003992a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000272c00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc0003992a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x0)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.authenticate(0xc000226200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:112 +0x55b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000226200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000348820, 0xc000226200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000348820, {0x47cc310, 0xc0002460e0}, 0xc000226c00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0x47caed8}, {0x47cc310, 0xc0002460e0}, 0xc000226c00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0004381e0, {0x47d06a0, 0xc000403890})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:07:38 server.go:3160: http: panic serving [::1]:56634: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 62 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647ce0, 0xc0003994a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000510000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc0003994a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000510180, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc0003994a0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x0)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.authenticate(0xc000227300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:112 +0x55b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000227300)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000348820, 0xc000227300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000348820, {0x47cc310, 0xc0002461c0}, 0xc0000fa300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0x47caed8}, {0x47cc310, 0xc0002461c0}, 0xc0000fa300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c6000, {0x47d06a0, 0xc000403890})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:08:05 server.go:3160: http: panic serving [::1]:56653: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647ce0, 0xc000020560})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00012ea80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc000020560})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00012ec00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647ce0, 0xc000020560})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x0)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.authenticate(0xc0000ce100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:112 +0x55b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0000ce100)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000831e0, 0xc0000ce100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000831e0, {0x47cc310, 0xc0003bc000}, 0xc0000ce000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0x47caed8}, {0x47cc310, 0xc0003bc000}, 0xc0000ce000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000418dc0, {0x47d06a0, 0xc0003866c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:25:13 server.go:3160: http: panic serving [::1]:57411: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647d60, 0xc000486ae0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0000ea300, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc000486ae0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0000ea480, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc000486ae0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0000ea600, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc000486ae0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x1)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.session(0xc00043a500)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:94 +0x129
+TodoApp/app/controllers.top(0xc00043a500)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:19 +0x232
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00043a500)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00040cb60, 0xc00043a500)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00040cb60, {0x47cc350, 0xc0003c81c0}, 0xc00043a300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000091650}, {0x47cc350, 0xc0003c81c0}, 0xc00043a300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000a6280, {0x47d06e0, 0xc000091560})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:25:14 server.go:3160: http: panic serving [::1]:57414: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 53 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647d60, 0xc00064e840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001a6a80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc00064e840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001a6c00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc00064e840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001a6d80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc00064e840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x1)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.session(0xc00007c100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:94 +0x129
+TodoApp/app/controllers.top(0xc00007c100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:19 +0x232
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00007c100)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00040cb60, 0xc00007c100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00040cb60, {0x47cc350, 0xc00014a000}, 0xc00043ad00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0000918c0}, {0x47cc350, 0xc00014a000}, 0xc00043ad00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000a63c0, {0x47d06e0, 0xc000091560})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:25:19 server.go:3160: http: panic serving [::1]:57419: Key "github.com/gin-contrib/sessions" does not exist
+goroutine 6 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4647d60, 0xc00064f3f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001a7380, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc00064f3f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001a7500, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc00064f3f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001a7680, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4647d60, 0xc00064f3f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+github.com/gin-gonic/gin.(*Context).MustGet(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/gin-contrib/sessions.Default(0x1)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:146 +0x99
+TodoApp/app/controllers.session(0xc00007cb00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:94 +0x129
+TodoApp/app/controllers.top(0xc00007cb00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_main.go:19 +0x232
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00007cb00)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00040cb60, 0xc00007cb00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00040cb60, {0x47cc350, 0xc00014a0e0}, 0xc00007c900)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000270420}, {0x47cc350, 0xc00014a0e0}, 0xc00007c900)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00013e000, {0x47d06e0, 0xc000091560})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:29:02 server.go:3160: http: panic serving [::1]:57589: interface conversion: interface {} is nil, not string
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x468dd80, 0xc0004028d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000462180, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc0004028d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000462300, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc0004028d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000462480, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc0004028d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+TodoApp/app/controllers.session(0xc00029e300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:99 +0x39d
+TodoApp/app/controllers.login(0xc00029e300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:58 +0xf3
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc00029e300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00029e300)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0003784e0, 0xc00029e300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0003784e0, {0x47e9910, 0xc000162000}, 0xc00029e100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000402420}, {0x47e9910, 0xc000162000}, 0xc00029e100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003860a0, {0x47ee160, 0xc00007f0e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:29:03 server.go:3160: http: panic serving [::1]:57591: interface conversion: interface {} is nil, not string
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x468dd80, 0xc0000a3500})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001b8000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc0000a3500})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001b8180, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc0000a3500})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0001b8300, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc0000a3500})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+TodoApp/app/controllers.session(0xc000570200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:99 +0x39d
+TodoApp/app/controllers.login(0xc000570200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:58 +0xf3
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc000570200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000570200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0003784e0, 0xc000570200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0003784e0, {0x47e9910, 0xc00057e000}, 0xc000570000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0000a2300}, {0x47e9910, 0xc00057e000}, 0xc000570000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000492780, {0x47ee160, 0xc00007f0e0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:29:08 server.go:3160: http: panic serving [::1]:57598: interface conversion: interface {} is nil, not string
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x468dd80, 0xc000480990})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0004e4180, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc000480990})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0004e4300, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc000480990})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0004e4480, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc000480990})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+TodoApp/app/controllers.session(0xc00056a200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:99 +0x39d
+TodoApp/app/controllers.login(0xc00056a200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:58 +0xf3
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc00056a200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00056a200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0003e6d00, 0xc00056a200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0003e6d00, {0x47e9910, 0xc000574000}, 0xc00056a000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0004804e0}, {0x47e9910, 0xc000574000}, 0xc00056a000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003fc0a0, {0x47ee160, 0xc000093920})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/30 23:29:38 server.go:3160: http: panic serving [::1]:57621: interface conversion: interface {} is nil, not string
+goroutine 53 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x468dd80, 0xc00011b350})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000250000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc00011b350})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000250180, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc00011b350})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000250300, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x468dd80, 0xc00011b350})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+TodoApp/app/controllers.session(0xc000494400)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:99 +0x39d
+TodoApp/app/controllers.login(0xc000494400)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/route_auth.go:58 +0xf3
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc000494400)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000494400)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0003e6d00, 0xc000494400)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0003e6d00, {0x47e9910, 0xc000246000}, 0xc000494200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00011a210}, {0x47e9910, 0xc000246000}, 0xc000494200)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000ac820, {0x47ee160, 0xc000093920})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8

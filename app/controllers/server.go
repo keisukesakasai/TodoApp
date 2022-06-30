@@ -5,6 +5,7 @@ import (
 	"TodoApp/config"
 	"context"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -14,16 +15,16 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 )
 
 // otel collector
@@ -41,23 +42,24 @@ func initProvider() (func(context.Context) error, error) {
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
-	conn, err := grpc.DialContext(ctx, "otel-collector-collector.tracing.svc.cluster.local:4318", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
-	if err != nil {
-		return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
-	}
-
-	// Set up a trace exporter
-	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
-	if err != nil {
-		return nil, fmt.Errorf("failed to create trace exporter: %w", err)
-	}
-
 	/*
-		traceExporter, err := stdouttrace.New(
-			stdouttrace.WithPrettyPrint(),
-			stdouttrace.WithWriter(os.Stderr),
-		)
+		conn, err := grpc.DialContext(ctx, "otel-collector-collector.tracing.svc.cluster.local:4318", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
+		if err != nil {
+			return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
+		}
+
+		// Set up a trace exporter
+		traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
+		if err != nil {
+			return nil, fmt.Errorf("failed to create trace exporter: %w", err)
+		}
 	*/
+
+	traceExporter, err := stdouttrace.New(
+		stdouttrace.WithPrettyPrint(),
+		//stdouttrace.WithWriter(os.Stderr),
+		stdouttrace.WithWriter(io.Discard),
+	)
 
 	bsp := sdktrace.NewBatchSpanProcessor(traceExporter)
 	tracerProvider := sdktrace.NewTracerProvider(
@@ -90,11 +92,14 @@ func session(c *gin.Context) (sess models.Session, err error) {
 	defer span.End()
 
 	// cookie, err := c.Request.Cookie("_cookie")
+	/*
+		session := sessions.Default(c)
+		session.Get("_cookie")
+		fmt.Println("===session====================================")
+		fmt.Println(session.Get("_cookie"))
+		cookie, _ := session.Get("_cookie").(string)
+	*/
 	cookie, err := c.Cookie("_cookie")
-	fmt.Println("===session===")
-	//fmt.Println(cookie.Value)
-	fmt.Println(cookie)
-	fmt.Println("===session===")
 
 	if err == nil {
 		// sess = models.Session{UUID: cookie.Value}
@@ -177,6 +182,8 @@ func StartMainServer() {
 	r.Use(otelgin.Middleware("todoapp-server"))
 	r.LoadHTMLGlob(config.Config.Static + "/templates/*")
 	r.Static("/static/", config.Config.Static)
+	store := cookie.NewStore([]byte("secret"))
+	r.Use(sessions.Sessions("mysession", store))
 
 	//--- handler
 	r.GET("/", top)

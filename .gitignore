@@ -27,3 +27,6 @@ go.work
 manifest/
 worklog/
 webapp.log
+
+# Air
+tmp/
