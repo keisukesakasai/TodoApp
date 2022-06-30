@@ -1,16 +1,17 @@
 package models
 
 import (
-	"context"
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
 	"log"
 
+	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
+
+	//_ "github.com/mattn/go-sqlite3"
 	"go.opentelemetry.io/otel"
-	// _ "github.com/mattn/go-sqlite3"
 )
 
 var Db *sql.DB
@@ -18,12 +19,6 @@ var Db *sql.DB
 var err error
 
 var tracer = otel.Tracer("models")
-
-const (
-	tableNameUser    = "users"
-	tableNameTodo    = "todos"
-	tableNameSession = "sessions"
-)
 
 func init() {
 	fmt.Println("Now migration...")
@@ -100,18 +95,16 @@ func init() {
 }
 */
 
-func createUUID(ctx context.Context) (uuidobj uuid.UUID) {
-	tracer := otel.Tracer("createUUID")
-	ctx, span := tracer.Start(ctx, "createUUID")
+func createUUID(c *gin.Context) (uuidobj uuid.UUID) {
+	_, span := tracer.Start(c.Request.Context(), "createUUID")
 	defer span.End()
 
 	uuidobj, _ = uuid.NewUUID()
 	return uuidobj
 }
 
-func Encrypt(ctx context.Context, plaintext string) (cryptext string) {
-	tracer := otel.Tracer("Encrypt")
-	ctx, span := tracer.Start(ctx, "Encrypt")
+func Encrypt(c *gin.Context, plaintext string) (cryptext string) {
+	_, span := tracer.Start(c.Request.Context(), "Encrypt")
 	defer span.End()
 
 	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))

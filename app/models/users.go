@@ -1,11 +1,11 @@
 package models
 
 import (
-	"context"
+	"fmt"
 	"log"
 	"time"
 
-	"go.opentelemetry.io/otel"
+	"github.com/gin-gonic/gin"
 )
 
 type User struct {
@@ -26,9 +26,9 @@ type Session struct {
 	CreatedAt time.Time
 }
 
-func (u *User) CreateUser(ctx context.Context) (err error) {
-	tracer := otel.Tracer("CreateUser")
-	ctx, span := tracer.Start(ctx, "CreateUser")
+func (u *User) CreateUser(c *gin.Context) (err error) {
+	ctx := c.Request.Context()
+	_, span := tracer.Start(ctx, "CRUD : CreateUser")
 	defer span.End()
 
 	cmd := `insert into users (
@@ -39,10 +39,10 @@ func (u *User) CreateUser(ctx context.Context) (err error) {
 		created_at) values ($1, $2, $3, $4, $5)`
 
 	_, err = Db.Exec(cmd,
-		createUUID(ctx),
+		createUUID(c),
 		u.Name,
 		u.Email,
-		Encrypt(ctx, u.PassWord),
+		Encrypt(c, u.PassWord),
 		time.Now())
 
 	if err != nil {
@@ -51,9 +51,8 @@ func (u *User) CreateUser(ctx context.Context) (err error) {
 	return err
 }
 
-func GetUser(ctx context.Context, id int) (user User, err error) {
-	tracer := otel.Tracer("GetUser")
-	ctx, span := tracer.Start(ctx, "GetUser")
+func GetUser(c *gin.Context, id int) (user User, err error) {
+	_, span := tracer.Start(c.Request.Context(), "GetUser")
 	defer span.End()
 
 	user = User{}
@@ -70,9 +69,8 @@ func GetUser(ctx context.Context, id int) (user User, err error) {
 	return user, err
 }
 
-func (u *User) UpdateUser(ctx context.Context) (err error) {
-	tracer := otel.Tracer("UpdateUser")
-	ctx, span := tracer.Start(ctx, "UpdateUser")
+func (u *User) UpdateUser(c *gin.Context) (err error) {
+	_, span := tracer.Start(c.Request.Context(), "UpdateUser")
 	defer span.End()
 
 	cmd := `update users set name = $1, email = $2 where id = $3`
@@ -83,9 +81,8 @@ func (u *User) UpdateUser(ctx context.Context) (err error) {
 	return err
 }
 
-func (u *User) DeleteUser(ctx context.Context) (err error) {
-	tracer := otel.Tracer("DeleteUser")
-	ctx, span := tracer.Start(ctx, "DeleteUser")
+func (u *User) DeleteUser(c *gin.Context) (err error) {
+	_, span := tracer.Start(c.Request.Context(), "DeleteUser")
 	defer span.End()
 
 	cmd := `delete from users where id = $1`
@@ -96,9 +93,8 @@ func (u *User) DeleteUser(ctx context.Context) (err error) {
 	return err
 }
 
-func GetUserByEmail(ctx context.Context, email string) (user User, err error) {
-	tracer := otel.Tracer("GetUserByEmail")
-	ctx, span := tracer.Start(ctx, "GetUserByEmail")
+func GetUserByEmail(c *gin.Context, email string) (user User, err error) {
+	_, span := tracer.Start(c.Request.Context(), "GetUserByEmail")
 	defer span.End()
 
 	user = User{}
@@ -115,10 +111,8 @@ func GetUserByEmail(ctx context.Context, email string) (user User, err error) {
 	return user, err
 }
 
-func (u *User) CreateSession(ctx context.Context) (session Session, err error) {
-	tracer := otel.Tracer("CreateSession")
-
-	ctx, span := tracer.Start(ctx, "createsession")
+func (u *User) CreateSession(c *gin.Context) (session Session, err error) {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : CreateSession")
 	defer span.End()
 
 	session = Session{}
@@ -128,12 +122,12 @@ func (u *User) CreateSession(ctx context.Context) (session Session, err error) {
 		user_id, 
 		created_at) values ($1, $2, $3, $4)`
 
-	_, err = Db.Exec(cmd1, createUUID(ctx), u.Email, u.ID, time.Now())
+	_, err = Db.Exec(cmd1, createUUID(c), u.Email, u.ID, time.Now())
 	if err != nil {
 		log.Println(err)
 	}
 
-	_, span = tracer.Start(ctx, "querysession")
+	_, span = tracer.Start(c.Request.Context(), "CRUD : QuerySession")
 	defer span.End()
 
 	cmd2 := `select id, uuid, email, user_id, created_at
@@ -149,13 +143,16 @@ func (u *User) CreateSession(ctx context.Context) (session Session, err error) {
 	return session, err
 }
 
-func (sess *Session) CheckSession(ctx context.Context) (valid bool, err error) {
-	tracer := otel.Tracer("CheckSession")
-	ctx, span := tracer.Start(ctx, "CheckSession")
+func (sess *Session) CheckSession(c *gin.Context) (valid bool, err error) {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : CheckSession")
 	defer span.End()
 
 	cmd := `select id, uuid, email, user_id, created_at
 	from sessions where uuid = $1`
+
+	fmt.Println("===checksession===")
+	fmt.Println(sess.UUID)
+	fmt.Println("===checksession===")
 
 	err = Db.QueryRow(cmd, sess.UUID).Scan(
 		&sess.ID,
@@ -163,6 +160,11 @@ func (sess *Session) CheckSession(ctx context.Context) (valid bool, err error) {
 		&sess.Email,
 		&sess.UserID,
 		&sess.CreatedAt)
+
+	fmt.Println("===checksession===")
+	fmt.Println(err)
+	fmt.Println(sess.ID)
+	fmt.Println("===checksession===")
 
 	if err != nil {
 		valid = false
@@ -175,9 +177,8 @@ func (sess *Session) CheckSession(ctx context.Context) (valid bool, err error) {
 	return valid, err
 }
 
-func (sess *Session) DeleteSessionByUUID(ctx context.Context) (err error) {
-	tracer := otel.Tracer("DeleteSessionByUUID")
-	ctx, span := tracer.Start(ctx, "DeleteSessionByUUID")
+func (sess *Session) DeleteSessionByUUID(c *gin.Context) (err error) {
+	_, span := tracer.Start(c.Request.Context(), "DeleteSessionByUUID")
 	defer span.End()
 
 	cmd := `delete from sessions where uuid = $1`
@@ -188,9 +189,8 @@ func (sess *Session) DeleteSessionByUUID(ctx context.Context) (err error) {
 	return err
 }
 
-func (sess *Session) GetUserBySession(ctx context.Context) (user User, err error) {
-	tracer := otel.Tracer("GetUserBySession")
-	ctx, span := tracer.Start(ctx, "GetUserBySession")
+func (sess *Session) GetUserBySession(c *gin.Context) (user User, err error) {
+	_, span := tracer.Start(c.Request.Context(), "GetUserBySession")
 	defer span.End()
 
 	user = User{}

@@ -2,127 +2,147 @@ package controllers
 
 import (
 	"TodoApp/app/models"
+	"fmt"
 	"log"
 	"net/http"
 
+	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/otel"
 )
 
-func signup(w http.ResponseWriter, r *http.Request) {
-	tracer := otel.Tracer("signup")
-	if r.Method == "GET" {
-		ctx := r.Context()
-		ctx, span := tracer.Start(ctx, "signup")
-		defer span.End()
-
-		_, err := session(ctx, w, r)
-		if err != nil {
-			generateHTML(ctx, w, nil, "signup", "layout", "signup", "public_navbar")
-		} else {
-			ctx := r.Context()
-			_, span := tracer.Start(ctx, "redirect")
-			defer span.End()
-			http.Redirect(w, r, "/todos", http.StatusFound)
-		}
-	} else if r.Method == "POST" {
-		ctx := r.Context()
-		ctx, span := tracer.Start(ctx, "signup")
-		defer span.End()
-
-		err := r.ParseForm()
-		if err != nil {
-			log.Println(err)
-		}
-		user := models.User{
-			Name:     r.PostFormValue("name"),
-			Email:    r.PostFormValue("email"),
-			PassWord: r.PostFormValue("password"),
-		}
-		if err := user.CreateUser(ctx); err != nil {
-			log.Println(err)
-		}
-		// ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-
-		r = r.WithContext(ctx)
-		http.Redirect(w, r, "/", http.StatusFound)
-	}
-}
-
-func login(w http.ResponseWriter, r *http.Request) {
-	// tracer := otel.Tracer("login")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "login")
+func getSignup(c *gin.Context) {
+	tracer := otel.Tracer("getSignup")
+	_, span := tracer.Start(c.Request.Context(), "getSignup")
 	defer span.End()
 
-	_, err := session(ctx, w, r)
+	_, err := session(c)
 	if err != nil {
-		generateHTML(ctx, w, nil, "login", "layout", "login", "public_navbar")
+		generateHTML(c, nil, "signup", "layout", "signup", "public_navbar")
 	} else {
-		ctx := r.Context()
-		_, span = tracer.Start(ctx, "redirect")
+		_, span := tracer.Start(c.Request.Context(), "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/todos", http.StatusFound)
+
+		// c.Redirect(http.StatusFound, "/todos")
+		//http.Redirect(w, r, "/todos", http.StatusFound)
+		index(c)
 	}
 }
 
-func authenticate(w http.ResponseWriter, r *http.Request) {
-	tracer := otel.Tracer("authenticate")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "authenticate")
+func postSignup(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "postSignup")
 	defer span.End()
 
-	//err := r.ParseForm()
-	user, err := models.GetUserByEmail(ctx, r.PostFormValue("email"))
+	err := c.Request.ParseForm()
 	if err != nil {
 		log.Println(err)
-		ctx = r.Context()
-		ctx, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
 	}
-	if user.PassWord == models.Encrypt(ctx, r.PostFormValue("password")) {
-		session, err := user.CreateSession(ctx)
+	user := models.User{
+		Name:     c.Request.PostFormValue("name"),
+		Email:    c.Request.PostFormValue("email"),
+		PassWord: c.Request.PostFormValue("password"),
+	}
+	if err := user.CreateUser(c); err != nil {
+		log.Println(err)
+	}
+
+	_, span = tracer.Start(c.Request.Context(), "redirect")
+	defer span.End()
+	top(c)
+}
+
+func login(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "login")
+	defer span.End()
+
+	_, err := session(c)
+	if err != nil {
+		generateHTML(c, nil, "login", "layout", "login", "public_navbar")
+	} else {
+		_, span = tracer.Start(c.Request.Context(), "redirect")
+		defer span.End()
+
+		// http.Redirect(w, r, "/todos", http.StatusFound)
+		index(c)
+	}
+}
+
+func authenticate(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "authenticate")
+	defer span.End()
+
+	user, err := models.GetUserByEmail(c, c.Request.PostFormValue("email"))
+	if err != nil {
+		log.Println(err)
+		_, span = tracer.Start(c.Request.Context(), "redirect")
+		defer span.End()
+
+		// http.Redirect(w, r, "/login", http.StatusFound)
+		login(c)
+	}
+	if user.PassWord == models.Encrypt(c, c.Request.PostFormValue("password")) {
+		session, err := user.CreateSession(c)
+
+		log.Println(session)
+		log.Println(session.UUID)
+		sessionUUID := session.UUID
+		log.Println(sessionUUID)
+
 		if err != nil {
 			log.Println(err)
 		}
 
-		cookie := http.Cookie{
-			Name:     "_cookie",
-			Value:    session.UUID,
-			HttpOnly: true,
-		}
-		http.SetCookie(w, &cookie)
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
+		/*
+			cookie := http.Cookie{
+				Name:     "_cookie",
+				Value:    session.UUID,
+				HttpOnly: true,
+			}
+		*/
+
+		cookie := new(http.Cookie)
+		cookie.Value = session.UUID
+		c.SetSameSite(http.SameSiteNoneMode)
+
+		c.SetCookie("_cookie", cookie.Value, -1, "/", "localhost", true, true)
+		c.SetCookie("_cookie", cookie.Value, 3600, "/", "localhost", true, true)
+		// http.SetCookie(c.Writer, &cookie)
+		fmt.Println("===setcookie===")
+		fmt.Println(c.Cookie("_cookie"))
+		fmt.Println(c.Cookie("_cookie"))
+		fmt.Println(c.Cookie("_cookie"))
+		fmt.Println("===setcookie===")
+		// ctx = r.Context()
+
+		_, span = tracer.Start(c.Request.Context(), "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/", http.StatusFound)
+
+		//http.Redirect(w, r, "/", http.StatusFound)
+		top(c)
 	} else {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
+		// ctx = r.Context()
+		_, span = tracer.Start(c.Request.Context(), "redirect")
 		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
+		// http.Redirect(w, r, "/login", http.StatusFound)
+		login(c)
 	}
 }
 
-func logout(w http.ResponseWriter, r *http.Request) {
-	tracer := otel.Tracer("logout")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "logout")
+func logout(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "logout")
 	defer span.End()
 
-	cookie, err := r.Cookie("_cookie")
+	cookie, err := c.Request.Cookie("_cookie")
 	if err != nil {
 		log.Println(err)
 	}
 
 	if err != http.ErrNoCookie {
 		session := models.Session{UUID: cookie.Value}
-		session.DeleteSessionByUUID(ctx)
+		session.DeleteSessionByUUID(c)
 	}
-	ctx = r.Context()
-	_, span = tracer.Start(ctx, "redirect")
+	_, span = tracer.Start(c.Request.Context(), "redirect")
 	defer span.End()
-	http.Redirect(w, r, "/login", http.StatusFound)
+
+	// http.Redirect(w, r, "/login", http.StatusFound)
+	login(c)
 }

@@ -1659,3 +1659,327 @@ created by net/http.(*Server).Serve
 2022/06/26 16:51:27 server.go:3160: http: superfluous response.WriteHeader call from TodoApp/app/controllers.authenticate (route_auth.go:66)
 2022/06/27 02:49:15 route_auth.go:71: sql: no rows in result set
 2022/06/27 02:49:15 server.go:3160: http: superfluous response.WriteHeader call from TodoApp/app/controllers.authenticate (route_auth.go:89)
+2022/06/28 23:48:55 server.go:165: failed to create gRPC connection to collector: context deadline exceeded
+2022/06/29 00:21:32 base.go:72: sql: unknown driver "sqlite3" (forgotten import?)
+2022/06/29 01:29:34 server.go:200: failed to create gRPC connection to collector: context deadline exceeded
+2022/06/29 01:33:18 server.go:3160: http: panic serving [::1]:56789: html/template: "getSignup" is undefined
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc000524840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000536000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc000524840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc000524840})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc000590400, 0xc8, {0x47e0ad0, 0xc000651ad0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc000590400, 0x47e5a00, {0x4715f46, 0x471abc8}, {0x469aea0, 0xc000650510})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc000590400, 0xc000650510, {0x4715f46, 0x9}, {0x469aea0, 0xc000650510})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func3(0xc000590400)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:238 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000590400)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000642b60, 0xc000590400)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000642b60, {0x47e1670, 0xc000530000}, 0xc000590100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000650390}, {0x47e1670, 0xc000530000}, 0xc000590100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0004cc460, {0x47e5a00, 0xc000651800})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:33:22 server.go:3160: http: panic serving [::1]:56791: html/template: "getSignup" is undefined
+goroutine 67 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc0006545c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0002b2c00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc0006545c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc0006545c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc0005da200, 0xc8, {0x47e0ad0, 0xc0004cb6e0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc0005da200, 0x47e5a00, {0x4715f46, 0x471abc8}, {0x469aea0, 0xc000514630})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc0005da200, 0xc000514630, {0x4715f46, 0x9}, {0x469aea0, 0xc000514630})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func3(0xc0005da200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:238 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0005da200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000642b60, 0xc0005da200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000642b60, {0x47e1670, 0xc0005e6000}, 0xc0005da000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000514240}, {0x47e1670, 0xc0005e6000}, 0xc0005da000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00051c0a0, {0x47e5a00, 0xc000651800})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:33:23 server.go:3160: http: panic serving [::1]:56792: html/template: "getSignup" is undefined
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc000470c20})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00019c000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc000470c20})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc000470c20})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc00056e200, 0xc8, {0x47e0ad0, 0xc00058d6b0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc00056e200, 0x47e5a00, {0x4715f46, 0x471abc8}, {0x469aea0, 0xc00058c2a0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc00056e200, 0xc00058c2a0, {0x4715f46, 0x9}, {0x469aea0, 0xc00058c2a0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func3(0xc00056e200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:238 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00056e200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000642b60, 0xc00056e200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000642b60, {0x47e1670, 0xc00057c000}, 0xc00056e000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00058c150}, {0x47e1670, 0xc00057c000}, 0xc00056e000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c6000, {0x47e5a00, 0xc000651800})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:33:33 server.go:3160: http: panic serving [::1]:56799: html/template: "top" is undefined
+goroutine 53 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc00047b730})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0002b2d80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc00047b730})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc00047b730})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc0005ee400, 0xc8, {0x47e0ad0, 0xc000450600})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc0005ee400, 0x47e5a00, {0x470aabf, 0x471abc8}, {0x469aea0, 0xc0000a32f0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc0005ee400, 0xc0000a32f0, {0x470aabf, 0x3}, {0x469aea0, 0xc0000a32f0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func2(0xc0005ee400)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:229 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0005ee400)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000479040, 0xc0005ee400)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000479040, {0x47e1670, 0xc00059e9a0}, 0xc0005ee300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0000a2a20}, {0x47e1670, 0xc00059e9a0}, 0xc0005ee300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0004d1040, {0x47e5a00, 0xc0000a2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:33:34 server.go:3160: http: panic serving [::1]:56801: html/template: "top" is undefined
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc000099250})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000596300, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc000099250})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc000099250})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc0004de200, 0xc8, {0x47e0ad0, 0xc000182ab0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc0004de200, 0x47e5a00, {0x470aabf, 0x471abc8}, {0x469aea0, 0xc00048e570})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc0004de200, 0xc00048e570, {0x470aabf, 0x3}, {0x469aea0, 0xc00048e570})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func2(0xc0004de200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:229 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0004de200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000479040, 0xc0004de200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000479040, {0x47e1670, 0xc0004ec000}, 0xc0004de000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00048e180}, {0x47e1670, 0xc0004ec000}, 0xc0004de000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0005c6280, {0x47e5a00, 0xc0000a2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:33:39 server.go:3160: http: panic serving [::1]:56807: html/template: "top" is undefined
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc00051eeb0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00021a000, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc00051eeb0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc00051eeb0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc000642300, 0xc8, {0x47e0ad0, 0xc000234090})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc000642300, 0x47e5a00, {0x470aabf, 0x471abc8}, {0x469aea0, 0xc00051ac60})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc000642300, 0xc00051ac60, {0x470aabf, 0x3}, {0x469aea0, 0xc00051ac60})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func2(0xc000642300)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:229 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000642300)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000479040, 0xc000642300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000479040, {0x47e1670, 0xc000214000}, 0xc000642100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00051ab10}, {0x47e1670, 0xc000214000}, 0xc000642100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000c6000, {0x47e5a00, 0xc0000a2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:34:09 server.go:3160: http: panic serving [::1]:56830: html/template: "top" is undefined
+goroutine 33 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc0000999c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000596900, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc0000999c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc0000999c0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc0004def00, 0xc8, {0x47e0ad0, 0xc0001ba120})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc0004def00, 0x47e5a00, {0x470aabf, 0x471abc8}, {0x469aea0, 0xc000182cf0})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc0004def00, 0xc000182cf0, {0x470aabf, 0x3}, {0x469aea0, 0xc000182cf0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func2(0xc0004def00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:229 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0004def00)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000479040, 0xc0004def00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000479040, {0x47e1670, 0xc0004ec0e0}, 0xc0004ded00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000182bd0}, {0x47e1670, 0xc0004ec0e0}, 0xc0004ded00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0005c6320, {0x47e5a00, 0xc0000a2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 01:35:09 server.go:3160: http: panic serving [::1]:56868: html/template: "top" is undefined
+goroutine 92 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4677f40, 0xc0001b6030})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000596f00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4677f40, 0xc0001b6030})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML.func2()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:121 +0x15e
+panic({0x4677f40, 0xc0001b6030})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+github.com/gin-gonic/gin.(*Context).Render(0xc0004dfc00, 0xc8, {0x47e0ad0, 0xc0001bb710})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:911 +0x105
+github.com/gin-gonic/gin.(*Context).HTML(0xc0004dfc00, 0x47e5a00, {0x470aabf, 0x471abc8}, {0x469aea0, 0xc0001ba300})
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:920 +0x6d
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.HTML(0xc0004dfc00, 0xc0001ba300, {0x470aabf, 0x3}, {0x469aea0, 0xc0001ba300})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:126 +0x546
+TodoApp/app/controllers.StartMainServer.func2(0xc0004dfc00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:229 +0x125
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0004dfc00)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000479040, 0xc0004dfc00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000479040, {0x47e1670, 0xc0004ec1c0}, 0xc0004dfa00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0001ba1e0}, {0x47e1670, 0xc0004ec1c0}, 0xc0004dfa00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0005c63c0, {0x47e5a00, 0xc0000a2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/06/29 02:12:09 server.go:200: failed to create gRPC connection to collector: context deadline exceeded

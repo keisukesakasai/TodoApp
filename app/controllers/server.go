@@ -14,6 +14,8 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/gin-gonic/gin"
+	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/propagation"
@@ -30,7 +32,6 @@ func initProvider() (func(context.Context) error, error) {
 
 	res, err := resource.New(ctx,
 		resource.WithAttributes(
-			// the service name used to display traces in backends
 			semconv.ServiceNameKey.String("TodoAPP"),
 		),
 	)
@@ -39,7 +40,7 @@ func initProvider() (func(context.Context) error, error) {
 	}
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
-	//
+
 	conn, err := grpc.DialContext(ctx, "otel-collector-collector.tracing.svc.cluster.local:4318", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
 	if err != nil {
 		return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
@@ -55,7 +56,6 @@ func initProvider() (func(context.Context) error, error) {
 		traceExporter, err := stdouttrace.New(
 			stdouttrace.WithPrettyPrint(),
 			stdouttrace.WithWriter(os.Stderr),
-
 		)
 	*/
 
@@ -71,31 +71,9 @@ func initProvider() (func(context.Context) error, error) {
 	return tracerProvider.Shutdown, nil
 }
 
-/*
-func tracerProvider(url string) (*tracesdk.TracerProvider, error) {
-	// Create the Jaeger exporter
-	exp, err := jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint(url)))
-	if err != nil {
-		return nil, err
-	}
-	tp := tracesdk.NewTracerProvider(
-		// Always be sure to batch in production.
-		tracesdk.WithBatcher(exp),
-		// Record information about this application in a Resource.
-		tracesdk.WithResource(resource.NewWithAttributes(
-			semconv.SchemaURL,
-			semconv.ServiceNameKey.String("TodoApp"),
-			attribute.String("environment", "GKE"),
-			attribute.Int64("ID", 1),
-		)),
-	)
-	return tp, nil
-}
-*/
-
-func generateHTML(ctx context.Context, writer http.ResponseWriter, data interface{}, procname string, filenames ...string) {
-	tracer := otel.Tracer("generateHTML")
-	_, span := tracer.Start(ctx, "generateHTML: "+procname)
+func generateHTML(c *gin.Context, data interface{}, procname string, filenames ...string) {
+	//tracer := otel.Tracer("generateHTML")
+	_, span := tracer.Start(c.Request.Context(), "generateHTML: "+procname)
 	defer span.End()
 
 	var files []string
@@ -104,9 +82,31 @@ func generateHTML(ctx context.Context, writer http.ResponseWriter, data interfac
 	}
 
 	templates := template.Must(template.ParseFiles(files...))
-	templates.ExecuteTemplate(writer, "layout", data)
+	templates.ExecuteTemplate(c.Writer, "layout", data)
 }
 
+func session(c *gin.Context) (sess models.Session, err error) {
+	_, span := tracer.Start(c.Request.Context(), "session")
+	defer span.End()
+
+	// cookie, err := c.Request.Cookie("_cookie")
+	cookie, err := c.Cookie("_cookie")
+	fmt.Println("===session===")
+	//fmt.Println(cookie.Value)
+	fmt.Println(cookie)
+	fmt.Println("===session===")
+
+	if err == nil {
+		// sess = models.Session{UUID: cookie.Value}
+		sess = models.Session{UUID: cookie}
+		if ok, _ := sess.CheckSession(c); !ok {
+			err = fmt.Errorf("invalid session")
+		}
+	}
+	return sess, err
+}
+
+/*
 func session(ctx context.Context, w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
 	tracer := otel.Tracer("session")
 	// ctx := r.Context()
@@ -122,40 +122,45 @@ func session(ctx context.Context, w http.ResponseWriter, r *http.Request) (sess 
 	}
 	return sess, err
 }
+*/
 
 var validPath = regexp.MustCompile("^/todos/(edit|save|update|delete)/([0-9]+)$")
 
-func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		q := validPath.FindStringSubmatch(r.URL.Path)
+func parseURL(fn func(*gin.Context, int)) gin.HandlerFunc {
+	return func(c *gin.Context) {
+
+		_, span := tracer.Start(c.Request.Context(), "parseURL")
+		defer span.End()
+
+		fmt.Println("===parseURL")
+		fmt.Println(c.Request.URL.Path)
+		fmt.Println("===parseURL")
+
+		q := validPath.FindStringSubmatch(c.Request.URL.Path)
+
+		fmt.Println("===parseURL")
+		fmt.Println(q)
+		fmt.Println("===parseURL")
+
 		if q == nil {
-			http.NotFound(w, r)
+			http.NotFound(c.Writer, c.Request)
 			return
 		}
+
 		id, _ := strconv.Atoi(q[2])
 		fmt.Println(id)
-		fn(w, r, id)
+		fn(c, id)
 	}
 }
 
 // --otelcollecotr--
 var tracer = otel.Tracer("controllers")
 
-func StartMainServer() error {
+func StartMainServer() {
 	fmt.Println("start server" + "port: " + config.Config.Port)
 
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
-
-	/*
-		tp, err := tracerProvider("jaeger-agent.tracing.svc.cluster.local:6831")
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		otel.SetTracerProvider(tp)
-		tracer := tp.Tracer("TodoApp")
-	*/
 
 	// otel collector
 	shutdown, err := initProvider()
@@ -168,29 +173,25 @@ func StartMainServer() error {
 		}
 	}()
 
-	/* こーするとダメなのなぜ？
-	files := http.FileServer(http.Dir(config.Config.Static))
-	http.Handle("/static/", http.StripPrefix("/static/", files))
-	*/
+	r := gin.New()
+	r.Use(otelgin.Middleware("todoapp-server"))
+	r.LoadHTMLGlob(config.Config.Static + "/templates/*")
+	r.Static("/static/", config.Config.Static)
 
-	// _, span := tracer.Start(ctx, "httpRequestHandler")
-	// defer span.End()
+	//--- handler
+	r.GET("/", top)
+	r.GET("/signup", getSignup)
+	r.POST("/signup", postSignup)
+	r.GET("/login", login)
+	r.GET("/logout", logout)
+	r.POST("/authenticate", authenticate)
 
-	files := http.FileServer(http.Dir(config.Config.Static))
-	http.Handle("/static/", http.StripPrefix("/static/", files))
+	r.GET("/todos", index)
+	r.GET("/todos/new", todoNew)
+	r.POST("/todos/save", todoSave)
+	r.GET("/todos/edit/:id", parseURL(todoEdit))
+	r.POST("/todos/update/:id", parseURL(todoUpdate))
+	r.GET("/todos/delete/:id", parseURL(todoDelete))
 
-	http.HandleFunc("/", middleware(top))
-	http.HandleFunc("/signup", signup)
-	http.HandleFunc("/login", login)
-	http.HandleFunc("/logout", logout)
-	http.HandleFunc("/authenticate", authenticate)
-
-	http.HandleFunc("/todos", index)
-	http.HandleFunc("/todos/new", todoNew)
-	http.HandleFunc("/todos/save", todoSave)
-	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
-	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
-	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
-
-	return http.ListenAndServe(":"+config.Config.Port, nil)
+	r.Run(":" + config.Config.Port)
 }
