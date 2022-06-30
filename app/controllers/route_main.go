@@ -14,7 +14,6 @@ func top(c *gin.Context) {
 
 	fmt.Println("===top===")
 	fmt.Println(c.Cookie("_cookie"))
-	fmt.Println("===top===")
 
 	_, err := session(c)
 	fmt.Println("---")
