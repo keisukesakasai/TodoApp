@@ -20,12 +20,11 @@ func index(c *gin.Context) {
 	_, span := tracer.Start(c.Request.Context(), "TODO画面取得")
 	defer span.End()
 
-	// UserId, _ := c.Get("UserId")
-	UserId, err := c.Cookie("UserId")
-	if err != nil {
-		log.Println(err)
+	UserId, isExist := c.Get("UserId")
+	if !isExist {
+		log.Println("セッションが存在していません")
 	}
-	user, err := models.GetUserByEmail(c, UserId)
+	user, err := models.GetUserByEmail(c, UserId.(string))
 	if err != nil {
 		log.Println(err)
 	}
