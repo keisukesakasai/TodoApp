@@ -1,7 +1,6 @@
 package models
 
 import (
-	"TodoApp/config"
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
@@ -10,9 +9,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 
-	// _ "github.com/lib/pq"
+	_ "github.com/lib/pq"
 
-	_ "github.com/mattn/go-sqlite3"
+	// _ "github.com/mattn/go-sqlite3"
 	"go.opentelemetry.io/otel"
 )
 
@@ -22,7 +21,6 @@ var err error
 
 var tracer = otel.Tracer("models")
 
-/*
 func init() {
 	fmt.Println("Now migration...")
 	Db, err = sql.Open("postgres", "host=postgresql.prod.svc.cluster.local port=5432 user=postgres dbname=postgres password=postgres sslmode=disable")
@@ -59,9 +57,8 @@ func init() {
 	Db.Exec(cmdS)
 	fmt.Println("initializing...DONE!!!!")
 }
-*/
 
-func init() {
+/*func init() {
 	fmt.Println("initializing...")
 	Db, err = sql.Open("sqlite3", config.Config.DbName)
 	if err != nil {
@@ -96,6 +93,7 @@ func init() {
 	Db.Exec(cmdS)
 	fmt.Println("initializing...DONE!!!!")
 }
+*/
 
 func createUUID(c *gin.Context) (uuidobj uuid.UUID) {
 	_, span := tracer.Start(c.Request.Context(), "createUUID")

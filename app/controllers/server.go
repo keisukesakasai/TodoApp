@@ -5,7 +5,6 @@ import (
 	"TodoApp/config"
 	"context"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 	"os"
@@ -19,12 +18,15 @@ import (
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
+	"go.opentelemetry.io/contrib/propagators/aws/xray"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 // otel collector
@@ -42,31 +44,42 @@ func initProvider() (func(context.Context) error, error) {
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
-	/*
-		conn, err := grpc.DialContext(ctx, "otel-collector-collector.tracing.svc.cluster.local:4318", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
-		if err != nil {
-			return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
-		}
+	conn, err := grpc.DialContext(ctx, "otel-collector-collector.tracing.svc.cluster.local:4318", grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
+	if err != nil {
+		return nil, fmt.Errorf("failed to create gRPC connection to collector: %w", err)
+	}
 
-		// Set up a trace exporter
-		traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
-		if err != nil {
-			return nil, fmt.Errorf("failed to create trace exporter: %w", err)
-		}
+	// Set up a trace exporter
+	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithGRPCConn(conn))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create trace exporter: %w", err)
+	}
+	/*
+		traceExporter, err := stdouttrace.New(
+			stdouttrace.WithPrettyPrint(),
+			//stdouttrace.WithWriter(os.Stderr),
+			stdouttrace.WithWriter(io.Discard),
+		)
 	*/
 
-	traceExporter, err := stdouttrace.New(
-		stdouttrace.WithPrettyPrint(),
-		//stdouttrace.WithWriter(os.Stderr),
-		stdouttrace.WithWriter(io.Discard),
-	)
+	// adot
+	idg := xray.NewIDGenerator()
+	/*
+		tracerProvider := trace.NewTracerProvider(
+			trace.WithSampler(trace.AlwaysSample()),
+			trace.WithBatcher(traceExporter),
+			trace.WithIDGenerator(idg),
+		)
+	*/
 
 	bsp := sdktrace.NewBatchSpanProcessor(traceExporter)
 	tracerProvider := sdktrace.NewTracerProvider(
 		sdktrace.WithSampler(sdktrace.AlwaysSample()),
 		sdktrace.WithResource(res),
 		sdktrace.WithSpanProcessor(bsp),
+		sdktrace.WithIDGenerator(idg),
 	)
+
 	otel.SetTracerProvider(tracerProvider)
 	otel.SetTextMapPropagator(propagation.TraceContext{})
 
