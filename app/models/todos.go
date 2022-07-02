@@ -1,11 +1,10 @@
 package models
 
 import (
-	"context"
 	"log"
 	"time"
 
-	"go.opentelemetry.io/otel"
+	"github.com/gin-gonic/gin"
 )
 
 type Todo struct {
@@ -15,9 +14,8 @@ type Todo struct {
 	CreatedAt time.Time
 }
 
-func (u *User) CreateTodo(ctx context.Context, content string) (err error) {
-	tracer := otel.Tracer("CreateTodo")
-	ctx, span := tracer.Start(ctx, "CreateTodo")
+func (u *User) CreateTodo(c *gin.Context, content string) (err error) {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : CreateTodo")
 	defer span.End()
 
 	cmd := `insert into todos (
@@ -33,9 +31,8 @@ func (u *User) CreateTodo(ctx context.Context, content string) (err error) {
 	return err
 }
 
-func GetTodo(ctx context.Context, id int) (todo Todo, err error) {
-	tracer := otel.Tracer("GetTodo")
-	ctx, span := tracer.Start(ctx, "GetTodo")
+func GetTodo(c *gin.Context, id int) (todo Todo, err error) {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : GetTodo")
 	defer span.End()
 
 	cmd := `select id, content, user_id, created_at from todos
@@ -51,9 +48,8 @@ func GetTodo(ctx context.Context, id int) (todo Todo, err error) {
 	return todo, err
 }
 
-func GetTodos(ctx context.Context) (todos []Todo, err error) {
-	tracer := otel.Tracer("GetTodos")
-	ctx, span := tracer.Start(ctx, "GetTodos")
+func GetTodos(c *gin.Context) (todos []Todo, err error) {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : GetTodos")
 	defer span.End()
 
 	cmd := `select id, content, user_id, created_at from todos`
@@ -77,9 +73,8 @@ func GetTodos(ctx context.Context) (todos []Todo, err error) {
 	return todos, err
 }
 
-func (u *User) GetTodosByUser(ctx context.Context) (todos []Todo, err error) {
-	tracer := otel.Tracer("GetTodosByUser")
-	ctx, span := tracer.Start(ctx, "GetTodosByUser")
+func (u *User) GetTodosByUser(c *gin.Context) (todos []Todo, err error) {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : GetTodosByUser")
 	defer span.End()
 
 	cmd := `select id, content, user_id, created_at from todos
@@ -106,9 +101,8 @@ func (u *User) GetTodosByUser(ctx context.Context) (todos []Todo, err error) {
 	return todos, err
 }
 
-func (t *Todo) UpdateTodo(ctx context.Context) error {
-	tracer := otel.Tracer("UpdateTodo")
-	ctx, span := tracer.Start(ctx, "UpdateTodo")
+func (t *Todo) UpdateTodo(c *gin.Context) error {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : UpdateTodo")
 	defer span.End()
 
 	cmd := `update todos set content = $1, user_id = $2 
@@ -120,9 +114,8 @@ func (t *Todo) UpdateTodo(ctx context.Context) error {
 	return err
 }
 
-func (t *Todo) DeleteTodo(ctx context.Context) error {
-	tracer := otel.Tracer("DeleteTodo")
-	ctx, span := tracer.Start(ctx, "DeleteTodo")
+func (t *Todo) DeleteTodo(c *gin.Context) error {
+	_, span := tracer.Start(c.Request.Context(), "CRUD : DeleteTodo")
 	defer span.End()
 
 	cmd := `delete from todos where id = $1`

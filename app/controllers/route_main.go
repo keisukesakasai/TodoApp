@@ -5,189 +5,136 @@ import (
 	"log"
 	"net/http"
 
-	"go.opentelemetry.io/otel"
+	"github.com/gin-gonic/gin"
 )
 
-func top(w http.ResponseWriter, r *http.Request) {
-	//tracer := otel.Tracer("top")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "top")
+func top(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "TOP画面取得")
 	defer span.End()
 
-	_, err := session(ctx, w, r)
-	if err != nil {
-		generateHTML(ctx, w, "hello", "top", "layout", "top", "public_navbar")
-	} else {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/todos", http.StatusFound)
-	}
-
+	log.Println("TOP画面取得")
+	generateHTML(c, "hello", "top", "layout", "top", "public_navbar")
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
-	tracer := otel.Tracer("index")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "index")
+func index(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "TODO画面取得")
 	defer span.End()
 
-	sess, err := session(ctx, w, r)
+	UserId, _ := c.Get("UserId")
+	user, err := models.GetUserByEmail(c, UserId.(string))
 	if err != nil {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/", http.StatusFound)
-	} else {
-		user, err := sess.GetUserBySession(ctx)
-		if err != nil {
-			log.Println(err)
-		}
-		todos, _ := user.GetTodosByUser(ctx)
-		user.Todos = todos
-		generateHTML(ctx, w, user, "index", "layout", "private_navbar", "index")
+		log.Println(err)
 	}
+
+	// ユーザの Todo を取得
+	todos, _ := user.GetTodosByUser(c)
+	user.Todos = todos
+
+	log.Println("TODO画面取得")
+	generateHTML(c, user, "index", "layout", "private_navbar", "index")
 }
 
-func todoNew(w http.ResponseWriter, r *http.Request) {
-	tracer := otel.Tracer("todoNew")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "todoNew")
+func todoNew(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "TODO作成画面取得")
 	defer span.End()
 
-	_, err := session(ctx, w, r)
-	if err != nil {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
-	} else {
-		generateHTML(ctx, w, nil, "todoNew", "layout", "private_navbar", "todo_new")
-	}
+	log.Println("TODO作成画面取得")
+	generateHTML(c, nil, "todoNew", "layout", "private_navbar", "todo_new")
 }
 
-func todoSave(w http.ResponseWriter, r *http.Request) {
-	tracer := otel.Tracer("todoSave")
-	ctx := r.Context()
-	_, span := tracer.Start(ctx, "todoSave")
+func todoSave(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "TODO保存")
 	defer span.End()
 
-	sess, err := session(ctx, w, r)
+	UserId, _ := c.Get("UserId")
+	user, err := models.GetUserByEmail(c, UserId.(string))
 	if err != nil {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
-	} else {
-		err = r.ParseForm()
-		if err != nil {
-			log.Println(err)
-		}
-		user, err := sess.GetUserBySession(ctx)
-		if err != nil {
-			log.Println(err)
-		}
-		content := r.PostFormValue(("content"))
-		if err := user.CreateTodo(ctx, content); err != nil {
-			log.Println(err)
-		}
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/todos", http.StatusFound)
+		log.Println(err)
 	}
+
+	content := c.Request.PostFormValue("content")
+	if err := user.CreateTodo(c, content); err != nil {
+		log.Println(err)
+	}
+	log.Println("TODO保存")
+
+	_, span = tracer.Start(c.Request.Context(), "TODO画面にリダイレクト")
+	defer span.End()
+
+	log.Println("TODO画面にリダイレクト")
+	c.Redirect(http.StatusFound, "/menu/todos")
 }
 
-func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
-	tracer := otel.Tracer("todoEdit")
-	ctx := r.Context()
-	ctx, span := tracer.Start(ctx, "todoEdit")
+func todoEdit(c *gin.Context, id int) {
+	_, span := tracer.Start(c.Request.Context(), "TODO編集画面取得")
 	defer span.End()
 
-	sess, err := session(ctx, w, r)
+	err := c.Request.ParseForm()
 	if err != nil {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
-	} else {
-		err = r.ParseForm()
-		if err != nil {
-			log.Println(err)
-		}
-		_, err := sess.GetUserBySession(ctx)
-		if err != nil {
-			log.Println(err)
-
-		}
-		t, err := models.GetTodo(ctx, id)
-		if err != nil {
-			log.Fatalln(err)
-		}
-		generateHTML(ctx, w, t, "todoEdit", "layout", "private_navbar", "todo_edit")
+		log.Println(err)
 	}
+
+	UserId, _ := c.Get("UserId")
+	_, err = models.GetUserByEmail(c, UserId.(string))
+	if err != nil {
+		log.Println(err)
+	}
+
+	t, err := models.GetTodo(c, id)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	log.Println("TODO編集画面取得")
+	generateHTML(c, t, "todoEdit", "layout", "private_navbar", "todo_edit")
 }
 
-func todoUpdate(w http.ResponseWriter, r *http.Request, id int) {
-	tracer := otel.Tracer("todoUpdate")
-	ctx := r.Context()
-	_, span := tracer.Start(ctx, "todoUpdate")
+func todoUpdate(c *gin.Context, id int) {
+	_, span := tracer.Start(c.Request.Context(), "TODO更新")
 	defer span.End()
 
-	sess, err := session(ctx, w, r)
+	err := c.Request.ParseForm()
 	if err != nil {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
-	} else {
-		err := r.ParseForm()
-		if err != nil {
-			log.Println(err)
-		}
-		user, err := sess.GetUserBySession(ctx)
-		if err != nil {
-			log.Println(err)
-		}
-		content := r.PostFormValue("content")
-		t := &models.Todo{ID: id, Content: content, UserID: user.ID}
-		if err := t.UpdateTodo(ctx); err != nil {
-			log.Println(err)
-		}
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/todos", http.StatusFound)
+		log.Println(err)
 	}
+
+	UserId, _ := c.Get("UserId")
+	user, err := models.GetUserByEmail(c, UserId.(string))
+	if err != nil {
+		log.Println(err)
+	}
+
+	content := c.Request.PostFormValue("content")
+	t := &models.Todo{ID: id, Content: content, UserID: user.ID}
+	if err := t.UpdateTodo(c); err != nil {
+		log.Println(err)
+	}
+	log.Println("TODO更新")
+
+	_, span = tracer.Start(c.Request.Context(), "TODO画面にリダイレクト")
+	defer span.End()
+
+	log.Println("TODO画面にリダイレクト")
+	c.Redirect(http.StatusFound, "/menu/todos")
 }
 
-func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
-	tracer := otel.Tracer("todoDelete")
-	ctx := r.Context()
-	_, span := tracer.Start(ctx, "todoDelete")
+func todoDelete(c *gin.Context, id int) {
+	_, span := tracer.Start(c.Request.Context(), "TODO削除")
 	defer span.End()
 
-	sess, err := session(ctx, w, r)
+	t, err := models.GetTodo(c, id)
 	if err != nil {
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/login", http.StatusFound)
-	} else {
-		_, err := sess.GetUserBySession(ctx)
-		if err != nil {
-			log.Println(err)
-		}
-		t, err := models.GetTodo(ctx, id)
-		if err != nil {
-			log.Println(err)
-		}
-		if err := t.DeleteTodo(ctx); err != nil {
-			log.Println(err)
-		}
-		ctx = r.Context()
-		_, span = tracer.Start(ctx, "redirect")
-		defer span.End()
-		http.Redirect(w, r, "/todos", http.StatusFound)
+		log.Println(err)
 	}
+
+	if err := t.DeleteTodo(c); err != nil {
+		log.Println(err)
+	}
+	log.Println("TODO削除")
+
+	_, span = tracer.Start(c.Request.Context(), "TODO画面にリダイレクト")
+	defer span.End()
+
+	log.Println("TODO画面にリダイレクト")
+	c.Redirect(http.StatusFound, "/menu/todos")
 }

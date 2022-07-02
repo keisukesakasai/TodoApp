@@ -1,30 +1,27 @@
 package models
 
 import (
-	"context"
+	"TodoApp/config"
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
 	"log"
 
+	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	_ "github.com/lib/pq"
+
+	// _ "github.com/lib/pq"
+
+	_ "github.com/mattn/go-sqlite3"
 	"go.opentelemetry.io/otel"
-	// _ "github.com/mattn/go-sqlite3"
 )
 
 var Db *sql.DB
 
 var err error
-
 var tracer = otel.Tracer("models")
 
-const (
-	tableNameUser    = "users"
-	tableNameTodo    = "todos"
-	tableNameSession = "sessions"
-)
-
+/*
 func init() {
 	fmt.Println("Now migration...")
 	Db, err = sql.Open("postgres", "host=postgresql.prod.svc.cluster.local port=5432 user=postgres dbname=postgres password=postgres sslmode=disable")
@@ -51,18 +48,10 @@ func init() {
 
 	Db.Exec(cmdT)
 
-	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-		id serial PRIMARY KEY,
-		uuid text NOT NULL UNIQUE,
-		email text,
-		user_id integer,
-		created_at timestamp)`, "sessions")
-
-	Db.Exec(cmdS)
-	fmt.Println("initializing...DONE!!!!")
+	log.Println("initializing...DONE!!!!")
 }
+*/
 
-/*
 func init() {
 	fmt.Println("initializing...")
 	Db, err = sql.Open("sqlite3", config.Config.DbName)
@@ -76,7 +65,7 @@ func init() {
 		name STRING,
 		email STRING,
 		password STRING,
-		created_at DATETIME)`, tableNameUser)
+		created_at DATETIME)`, "users")
 
 	Db.Exec(cmdU)
 
@@ -84,34 +73,23 @@ func init() {
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		content TEXT,
 		user_id INTEGER,
-		created_at DATETIME)`, tableNameTodo)
+		created_at DATETIME)`, "todos")
 
 	Db.Exec(cmdT)
 
-	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		uuid STRING NOT NULL UNIQUE,
-		email STRING,
-		user_id INTEGER,
-		created_at DATETIME)`, tableNameSession)
-
-	Db.Exec(cmdS)
-	fmt.Println("initializing...DONE!!!!")
+	log.Println("initializing...DONE!!!!")
 }
-*/
 
-func createUUID(ctx context.Context) (uuidobj uuid.UUID) {
-	tracer := otel.Tracer("createUUID")
-	ctx, span := tracer.Start(ctx, "createUUID")
+func createUUID(c *gin.Context) (uuidobj uuid.UUID) {
+	_, span := tracer.Start(c.Request.Context(), "createUUID")
 	defer span.End()
 
 	uuidobj, _ = uuid.NewUUID()
 	return uuidobj
 }
 
-func Encrypt(ctx context.Context, plaintext string) (cryptext string) {
-	tracer := otel.Tracer("Encrypt")
-	ctx, span := tracer.Start(ctx, "Encrypt")
+func Encrypt(c *gin.Context, plaintext string) (cryptext string) {
+	_, span := tracer.Start(c.Request.Context(), "Encrypt")
 	defer span.End()
 
 	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))
