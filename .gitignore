@@ -27,6 +27,10 @@ go.work
 manifest/
 worklog/
 webapp.log
+webapp.sql
 
 # Air
 tmp/
+
+# vscode
+workspace.code-workspace

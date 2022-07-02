@@ -5,30 +5,20 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
-	"go.opentelemetry.io/otel"
 )
 
 func getSignup(c *gin.Context) {
-	tracer := otel.Tracer("getSignup")
-	_, span := tracer.Start(c.Request.Context(), "getSignup")
+	_, span := tracer.Start(c.Request.Context(), "ユーザ登録画面取得")
 	defer span.End()
 
-	_, err := session(c)
-	if err != nil {
-		generateHTML(c, nil, "signup", "layout", "signup", "public_navbar")
-	} else {
-		_, span := tracer.Start(c.Request.Context(), "redirect")
-		defer span.End()
-
-		// c.Redirect(http.StatusFound, "/todos")
-		//http.Redirect(w, r, "/todos", http.StatusFound)
-		index(c)
-	}
+	log.Println("ユーザ登録画面取得")
+	generateHTML(c, nil, "signup", "layout", "signup", "public_navbar")
 }
 
 func postSignup(c *gin.Context) {
-	_, span := tracer.Start(c.Request.Context(), "postSignup")
+	_, span := tracer.Start(c.Request.Context(), "ユーザ登録")
 	defer span.End()
 
 	err := c.Request.ParseForm()
@@ -44,108 +34,71 @@ func postSignup(c *gin.Context) {
 		log.Println(err)
 	}
 
-	_, span = tracer.Start(c.Request.Context(), "redirect")
+	UserId := c.PostForm("email")
+	log.Println("ログイン処理")
+	login(c, UserId)
+
+	_, span = tracer.Start(c.Request.Context(), "TODO画面にリダイレクト")
 	defer span.End()
-	top(c)
+
+	log.Println("TODO画面にリダイレクト")
+	c.Redirect(http.StatusMovedPermanently, "/menu/todos")
 }
 
-func login(c *gin.Context) {
-	_, span := tracer.Start(c.Request.Context(), "login")
+func login(c *gin.Context, UserId string) {
+	_, span := tracer.Start(c.Request.Context(), "ログイン")
 	defer span.End()
 
-	_, err := session(c)
-	if err != nil {
-		generateHTML(c, nil, "login", "layout", "login", "public_navbar")
-	} else {
-		_, span = tracer.Start(c.Request.Context(), "redirect")
-		defer span.End()
-
-		// http.Redirect(w, r, "/todos", http.StatusFound)
-		index(c)
-	}
-}
-
-func authenticate(c *gin.Context) {
-	_, span := tracer.Start(c.Request.Context(), "authenticate")
-	defer span.End()
-
-	user, err := models.GetUserByEmail(c, c.Request.PostFormValue("email"))
-	if err != nil {
-		log.Println(err)
-		_, span = tracer.Start(c.Request.Context(), "redirect")
-		defer span.End()
-
-		http.Redirect(c.Writer, c.Request, "/login", http.StatusFound)
-		// login(c)
-	}
-	if user.PassWord == models.Encrypt(c, c.Request.PostFormValue("password")) {
-		session, err := user.CreateSession(c)
-
-		if err != nil {
-			log.Println(err)
-		}
-
-		/*
-			cookie := http.Cookie{
-				Name:     "_cookie",
-				Value:    session.UUID,
-				HttpOnly: true,
-			}
-		*/
-
-		cookie := new(http.Cookie)
-		cookie.Value = session.UUID
-		c.SetSameSite(http.SameSiteNoneMode)
-		c.SetCookie("_cookie", cookie.Value, 3600, "/", "localhost", true, true)
-
-		// http.SetCookie(c.Writer, &cookie)
-		/*
-			fmt.Println(session.UUID)
-			c.SetCookie("_cookie", session.UUID, 3600, "/", "localhost", true, true)
-			fmt.Println("===setcookie===")
-			fmt.Println(c.Cookie("_cookie"))
-		*/
-		// ctx = r.Context()
-
-		/*
-			session := sessions.Default(c)
-			session.Set("_cookie", _session.UUID)
-			session.Get("_cookie")
-			fmt.Println("============session===========")
-			fmt.Println(_session.UUID)
-		*/
-
-		_, span = tracer.Start(c.Request.Context(), "redirect")
-		defer span.End()
-
-		//http.Redirect(w, r, "/", http.StatusFound)
-		top(c)
-	} else {
-		// ctx = r.Context()
-		_, span = tracer.Start(c.Request.Context(), "redirect")
-		defer span.End()
-
-		// http.Redirect(w, r, "/login", http.StatusFound)
-		login(c)
-	}
+	session := sessions.Default(c)
+	session.Set("UserId", UserId)
+	session.Save()
+	log.Println("ログイン")
 }
 
 func logout(c *gin.Context) {
-	_, span := tracer.Start(c.Request.Context(), "logout")
+	_, span := tracer.Start(c.Request.Context(), "ログアウト")
 	defer span.End()
 
-	cookie, err := c.Request.Cookie("_cookie")
+	session := sessions.Default(c)
+	session.Clear()
+	session.Save()
+	log.Println("ログアウト")
+}
+
+func getLogin(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "ログイン画面取得")
+	defer span.End()
+
+	log.Println("ログイン画面取得")
+	generateHTML(c, nil, "login", "layout", "login", "public_navbar")
+}
+
+func postLogin(c *gin.Context) {
+	user, err := models.GetUserByEmail(c, c.Request.PostFormValue("email"))
 	if err != nil {
 		log.Println(err)
+		log.Println("ユーザがいません")
+		c.Redirect(http.StatusFound, "/login")
+	} else if user.PassWord == models.Encrypt(c, c.Request.PostFormValue("password")) {
+		UserId := c.PostForm("email")
+		log.Println("ログイン処理")
+		login(c, UserId)
+		c.Redirect(http.StatusMovedPermanently, "/menu/todos")
+	} else {
+		log.Println("PW が間違っています")
+		c.Redirect(http.StatusFound, "/login")
 	}
+}
 
-	if err != http.ErrNoCookie {
-		session := models.Session{UUID: cookie.Value}
-		session.DeleteSessionByUUID(c)
-	}
-	_, span = tracer.Start(c.Request.Context(), "redirect")
+func getLogout(c *gin.Context) {
+	_, span := tracer.Start(c.Request.Context(), "ログアウト")
 	defer span.End()
 
-	// http.Redirect(w, r, "/login", http.StatusFound)
-	login(c)
+	logout(c)
+
+	_, span = tracer.Start(c.Request.Context(), "TOP画面にリダイレクト")
+	defer span.End()
+
+	log.Println("TOP画面にリダイレクト")
+	c.Redirect(http.StatusMovedPermanently, "/")
 }

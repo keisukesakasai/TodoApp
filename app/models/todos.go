@@ -15,7 +15,7 @@ type Todo struct {
 }
 
 func (u *User) CreateTodo(c *gin.Context, content string) (err error) {
-	_, span := tracer.Start(c.Request.Context(), "CreateTodo")
+	_, span := tracer.Start(c.Request.Context(), "CRUD : CreateTodo")
 	defer span.End()
 
 	cmd := `insert into todos (
@@ -32,7 +32,7 @@ func (u *User) CreateTodo(c *gin.Context, content string) (err error) {
 }
 
 func GetTodo(c *gin.Context, id int) (todo Todo, err error) {
-	_, span := tracer.Start(c.Request.Context(), "GetTodo")
+	_, span := tracer.Start(c.Request.Context(), "CRUD : GetTodo")
 	defer span.End()
 
 	cmd := `select id, content, user_id, created_at from todos
@@ -49,7 +49,7 @@ func GetTodo(c *gin.Context, id int) (todo Todo, err error) {
 }
 
 func GetTodos(c *gin.Context) (todos []Todo, err error) {
-	_, span := tracer.Start(c.Request.Context(), "GetTodos")
+	_, span := tracer.Start(c.Request.Context(), "CRUD : GetTodos")
 	defer span.End()
 
 	cmd := `select id, content, user_id, created_at from todos`
@@ -74,7 +74,7 @@ func GetTodos(c *gin.Context) (todos []Todo, err error) {
 }
 
 func (u *User) GetTodosByUser(c *gin.Context) (todos []Todo, err error) {
-	_, span := tracer.Start(c.Request.Context(), "GetTodosByUser")
+	_, span := tracer.Start(c.Request.Context(), "CRUD : GetTodosByUser")
 	defer span.End()
 
 	cmd := `select id, content, user_id, created_at from todos
@@ -102,7 +102,7 @@ func (u *User) GetTodosByUser(c *gin.Context) (todos []Todo, err error) {
 }
 
 func (t *Todo) UpdateTodo(c *gin.Context) error {
-	_, span := tracer.Start(c.Request.Context(), "UpdateTodo")
+	_, span := tracer.Start(c.Request.Context(), "CRUD : UpdateTodo")
 	defer span.End()
 
 	cmd := `update todos set content = $1, user_id = $2 
@@ -115,7 +115,7 @@ func (t *Todo) UpdateTodo(c *gin.Context) error {
 }
 
 func (t *Todo) DeleteTodo(c *gin.Context) error {
-	_, span := tracer.Start(c.Request.Context(), "DeleteTodo")
+	_, span := tracer.Start(c.Request.Context(), "CRUD : DeleteTodo")
 	defer span.End()
 
 	cmd := `delete from todos where id = $1`

@@ -2507,3 +2507,1030 @@ net/http.(*conn).serve(0xc0000ac820, {0x47ee160, 0xc000093920})
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 11:42:26 route_auth.go:76: ログイン処理
+2022/07/02 11:44:17 route_auth.go:77: ログイン処理
+2022/07/02 11:44:17 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 11:45:02 route_auth.go:77: ログイン処理
+2022/07/02 11:45:02 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 11:53:58 route_auth.go:79: sql: no rows in result set
+2022/07/02 11:54:36 route_auth.go:84: ログイン処理
+2022/07/02 11:54:36 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 11:55:07 route_auth.go:84: ログイン処理
+2022/07/02 11:55:07 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 11:59:26 route_auth.go:84: ログイン処理
+2022/07/02 11:59:26 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 12:07:37 route_auth.go:84: ログイン処理
+2022/07/02 12:07:37 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 12:09:47 server.go:251: checkSession
+2022/07/02 12:09:47 server.go:258: Not loginned.
+2022/07/02 12:09:47 server.go:265: Finish checking login.
+2022/07/02 12:09:50 server.go:251: checkSession
+2022/07/02 12:09:50 server.go:258: Not loginned.
+2022/07/02 12:09:50 server.go:265: Finish checking login.
+2022/07/02 12:09:56 route_auth.go:84: ログイン処理
+2022/07/02 12:09:56 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 12:09:56 server.go:251: checkSession
+2022/07/02 12:09:56 server.go:258: Not loginned.
+2022/07/02 12:09:56 server.go:265: Finish checking login.
+2022/07/02 12:10:35 route_auth.go:84: ログイン処理
+2022/07/02 12:10:35 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 12:10:35 server.go:250: checkSession
+2022/07/02 12:10:35 server.go:257: Not loginned.
+2022/07/02 12:10:35 server.go:264: Finish checking login.
+2022/07/02 12:11:15 route_auth.go:84: ログイン処理
+2022/07/02 12:11:15 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 12:11:15 server.go:250: checkSession
+2022/07/02 12:11:15 server.go:257: Not loginned.
+2022/07/02 12:11:15 server.go:264: Finish checking login.
+2022/07/02 12:12:23 route_auth.go:78: {1 4003f5ae-f9b2-11ec-96df-acde48001122 test test@exmaple.com a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 2022-07-02 11:54:11.514071 +0900 +0900 []}
+2022/07/02 12:12:23 route_auth.go:85: ログイン処理
+2022/07/02 12:12:23 route_auth.go:56: login 後 session 情報を格納
+2022/07/02 12:12:23 server.go:249: checkSession
+2022/07/02 12:12:23 server.go:256: Not loginned.
+2022/07/02 12:12:23 server.go:263: Finish checking login.
+2022/07/02 12:13:49 route_auth.go:84: ログイン処理
+2022/07/02 12:13:49 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:13:49 route_auth.go:59: &{mysession 0xc0004a2500 0xc00040a048 0xc0003a2050 false 0xc0004a2000}
+2022/07/02 12:13:49 server.go:249: checkSession
+2022/07/02 12:13:49 server.go:256: Not loginned.
+2022/07/02 12:13:49 server.go:263: Finish checking login.
+2022/07/02 12:14:34 route_auth.go:84: ログイン処理
+2022/07/02 12:14:34 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:14:34 route_auth.go:59: &{mysession 0xc000482900 0xc0000bc040 0xc00007e870 false 0xc000482400}
+2022/07/02 12:14:34 server.go:249: checkSession
+2022/07/02 12:14:34 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:14:34 server.go:263: Finish checking login.
+2022/07/02 12:15:56 server.go:249: checkSession
+2022/07/02 12:15:56 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:15:56 server.go:263: Finish checking login.
+2022/07/02 12:16:02 server.go:249: checkSession
+2022/07/02 12:16:02 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:16:02 server.go:263: Finish checking login.
+2022/07/02 12:16:32 server.go:249: checkSession
+2022/07/02 12:16:32 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:16:32 server.go:263: Finish checking login.
+2022/07/02 12:16:39 route_auth.go:66: セッション取得
+2022/07/02 12:16:39 route_auth.go:68: クリア処理
+2022/07/02 12:17:11 route_auth.go:66: セッション取得
+2022/07/02 12:17:11 route_auth.go:68: クリア処理
+2022/07/02 12:18:37 route_auth.go:84: ログイン処理
+2022/07/02 12:18:37 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:18:37 route_auth.go:59: &{mysession 0xc000418900 0xc0000100d8 0xc00007e870 false 0xc000418400}
+2022/07/02 12:18:37 server.go:249: checkSession
+2022/07/02 12:18:37 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:18:37 server.go:263: Finish checking login.
+2022/07/02 12:19:49 server.go:249: checkSession
+2022/07/02 12:19:49 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:19:49 server.go:263: Finish checking login.
+2022/07/02 12:19:57 server.go:249: checkSession
+2022/07/02 12:19:57 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:19:57 server.go:263: Finish checking login.
+2022/07/02 12:20:03 server.go:249: checkSession
+2022/07/02 12:20:03 server.go:263: Finish checking login.
+2022/07/02 12:21:13 server.go:249: checkSession
+2022/07/02 12:21:13 server.go:263: Finish checking login.
+2022/07/02 12:21:19 server.go:249: checkSession
+2022/07/02 12:21:19 server.go:263: Finish checking login.
+2022/07/02 12:22:26 route_auth.go:66: セッション取得
+2022/07/02 12:22:26 route_auth.go:68: クリア処理
+2022/07/02 12:22:46 server.go:249: checkSession
+2022/07/02 12:22:46 server.go:263: Finish checking login.
+2022/07/02 12:23:10 server.go:249: checkSession
+2022/07/02 12:23:10 server.go:263: Finish checking login.
+2022/07/02 12:25:54 route_auth.go:84: ログイン処理
+2022/07/02 12:25:54 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:25:54 route_auth.go:59: &{mysession 0xc000174e00 0xc000010048 0xc0003a2730 false 0xc000174100}
+2022/07/02 12:25:54 server.go:249: checkSession
+2022/07/02 12:25:54 route_main.go:43: UserId 取得: test@exmaple.com
+2022/07/02 12:25:54 server.go:263: Finish checking login.
+2022/07/02 12:25:58 server.go:249: checkSession
+2022/07/02 12:25:58 server.go:263: Finish checking login.
+2022/07/02 12:26:00 server.go:249: checkSession
+2022/07/02 12:26:00 route_main.go:89: sql: no rows in result set
+2022/07/02 12:26:00 server.go:263: Finish checking login.
+2022/07/02 12:28:25 server.go:249: checkSession
+2022/07/02 12:28:25 route_main.go:44: UserId 取得: test@exmaple.com
+2022/07/02 12:28:25 server.go:263: Finish checking login.
+2022/07/02 12:29:29 server.go:249: checkSession
+2022/07/02 12:29:29 route_main.go:44: UserId 取得: test@exmaple.com
+2022/07/02 12:29:29 route_main.go:51: []
+2022/07/02 12:29:29 server.go:263: Finish checking login.
+2022/07/02 12:34:39 route_auth.go:66: セッション取得
+2022/07/02 12:34:39 route_auth.go:68: クリア処理
+2022/07/02 12:35:42 route_auth.go:66: セッション取得
+2022/07/02 12:35:42 route_auth.go:68: クリア処理
+2022/07/02 12:36:41 route_auth.go:85: ログイン処理
+2022/07/02 12:36:41 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:36:41 route_auth.go:59: &{mysession 0xc00001e200 0xc0006c8040 0xc000416870 false 0xc0000de400}
+2022/07/02 12:36:41 server.go:249: checkSession
+2022/07/02 12:36:41 route_main.go:44: UserId 取得: test@exmaple.com
+2022/07/02 12:36:41 route_main.go:51: []
+2022/07/02 12:36:41 server.go:263: Finish checking login.
+2022/07/02 12:41:55 route_auth.go:85: ログイン処理
+2022/07/02 12:41:55 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:41:55 route_auth.go:59: &{mysession 0xc0000d7a00 0xc000010300 0xc000108eb0 false 0xc0000d6400}
+2022/07/02 12:41:55 server.go:249: checkSession
+2022/07/02 12:41:55 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:41:55 route_main.go:53: []
+2022/07/02 12:41:55 server.go:263: Finish checking login.
+2022/07/02 12:44:38 route_auth.go:85: ログイン処理
+2022/07/02 12:44:38 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:44:38 route_auth.go:59: &{mysession 0xc0000a8e00 0xc000010048 0xc0000c4230 false 0xc0000a8100}
+2022/07/02 12:44:38 server.go:249: checkSession
+2022/07/02 12:44:38 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:44:38 route_main.go:53: []
+2022/07/02 12:44:38 server.go:263: Finish checking login.
+2022/07/02 12:48:49 route_auth.go:78: sql: no rows in result set
+2022/07/02 12:50:21 route_auth.go:78: sql: no rows in result set
+2022/07/02 12:50:39 route_auth.go:83: ログイン処理
+2022/07/02 12:50:39 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:50:39 route_auth.go:59: &{mysession 0xc000280200 0xc0000c4040 0xc00007e780 false 0xc0000de500}
+2022/07/02 12:50:39 server.go:249: checkSession
+2022/07/02 12:50:39 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:50:39 route_main.go:53: []
+2022/07/02 12:50:39 server.go:263: Finish checking login.
+2022/07/02 12:52:38 route_auth.go:78: sql: no rows in result set
+2022/07/02 12:52:43 route_auth.go:83: ログイン処理
+2022/07/02 12:52:43 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:52:43 route_auth.go:59: &{mysession 0xc00067e200 0xc0000c4040 0xc0000cc320 false 0xc00021c000}
+2022/07/02 12:52:43 server.go:249: checkSession
+2022/07/02 12:52:43 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:52:43 route_main.go:53: []
+2022/07/02 12:52:43 server.go:263: Finish checking login.
+2022/07/02 12:53:39 route_auth.go:90: ログアウト処理
+2022/07/02 12:53:39 route_auth.go:65: セッション取得
+2022/07/02 12:53:39 route_auth.go:67: クリア処理
+2022/07/02 12:54:26 route_auth.go:83: ログイン処理
+2022/07/02 12:54:26 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 12:54:26 route_auth.go:59: &{mysession 0xc000230f00 0xc0000bc040 0xc0000c4280 false 0xc000480200}
+2022/07/02 12:54:26 server.go:249: checkSession
+2022/07/02 12:54:26 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:54:26 route_main.go:53: []
+2022/07/02 12:54:26 server.go:263: Finish checking login.
+2022/07/02 12:56:11 server.go:249: checkSession
+2022/07/02 12:56:11 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:56:11 route_main.go:53: []
+2022/07/02 12:56:11 server.go:263: Finish checking login.
+2022/07/02 12:58:34 server.go:249: checkSession
+2022/07/02 12:58:34 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 12:58:34 route_main.go:53: []
+2022/07/02 12:58:34 server.go:263: Finish checking login.
+2022/07/02 13:00:07 route_auth.go:83: ログイン処理
+2022/07/02 13:00:07 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 13:00:07 route_auth.go:59: &{mysession 0xc000415d00 0xc0000c4040 0xc00007e4b0 false 0xc000414300}
+2022/07/02 13:00:07 server.go:249: checkSession
+2022/07/02 13:00:07 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:00:07 route_main.go:53: []
+2022/07/02 13:00:07 server.go:263: Finish checking login.
+2022/07/02 13:02:26 route_auth.go:83: ログイン処理
+2022/07/02 13:02:26 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 13:02:26 route_auth.go:59: &{mysession 0xc00010c300 0xc000010040 0xc000642be0 false 0xc0000de300}
+2022/07/02 13:02:26 server.go:249: checkSession
+2022/07/02 13:02:26 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:02:26 route_main.go:53: []
+2022/07/02 13:02:26 server.go:263: Finish checking login.
+2022/07/02 13:02:38 route_auth.go:83: ログイン処理
+2022/07/02 13:02:38 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 13:02:38 route_auth.go:59: &{mysession 0xc0007dc700 0xc000010040 0xc0003a05a0 false 0xc0007aa100}
+2022/07/02 13:02:38 server.go:249: checkSession
+2022/07/02 13:02:38 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:02:38 route_main.go:53: []
+2022/07/02 13:02:38 server.go:263: Finish checking login.
+2022/07/02 13:07:55 route_auth.go:90: ログアウト処理
+2022/07/02 13:07:55 route_auth.go:65: セッション取得
+2022/07/02 13:07:55 route_auth.go:67: クリア処理
+2022/07/02 13:08:36 route_auth.go:90: ログアウト処理
+2022/07/02 13:08:36 route_auth.go:65: セッション取得
+2022/07/02 13:08:36 route_auth.go:67: クリア処理
+2022/07/02 13:08:53 route_auth.go:83: ログイン処理
+2022/07/02 13:08:53 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 13:08:53 route_auth.go:59: &{mysession 0xc00044ed00 0xc000010050 0xc00007e780 false 0xc000232000}
+2022/07/02 13:08:53 server.go:249: checkSession
+2022/07/02 13:08:53 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:08:53 route_main.go:53: []
+2022/07/02 13:08:53 server.go:263: Finish checking login.
+2022/07/02 13:09:23 route_auth.go:83: ログイン処理
+2022/07/02 13:09:23 route_auth.go:55: login 後 session 情報を格納
+2022/07/02 13:09:23 route_auth.go:59: &{mysession 0xc0000de600 0xc000010050 0xc0004161e0 false 0xc0000de000}
+2022/07/02 13:09:23 server.go:249: checkSession
+2022/07/02 13:09:23 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:09:23 route_main.go:53: []
+2022/07/02 13:09:23 server.go:263: Finish checking login.
+2022/07/02 13:10:03 route_auth.go:78: sql: no rows in result set
+2022/07/02 13:12:02 server.go:249: checkSession
+2022/07/02 13:12:02 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:12:02 route_main.go:53: []
+2022/07/02 13:12:02 server.go:263: Finish checking login.
+2022/07/02 13:12:17 server.go:249: checkSession
+2022/07/02 13:12:17 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:12:17 route_main.go:53: []
+2022/07/02 13:12:17 server.go:263: Finish checking login.
+2022/07/02 13:15:50 route_auth.go:49: ログイン処理
+2022/07/02 13:15:50 route_auth.go:63: login 後 session 情報を格納
+2022/07/02 13:15:50 route_auth.go:67: &{mysession 0xc00044e200 0xc000010058 0xc000412410 false 0xc0000de200}
+2022/07/02 13:15:50 server.go:249: checkSession
+2022/07/02 13:15:50 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:15:50 route_main.go:53: []
+2022/07/02 13:15:50 server.go:263: Finish checking login.
+2022/07/02 13:16:04 route_auth.go:49: ログイン処理
+2022/07/02 13:16:04 route_auth.go:63: login 後 session 情報を格納
+2022/07/02 13:16:04 route_auth.go:67: &{mysession 0xc0002fd200 0xc000010058 0xc00007e820 false 0xc0003ca100}
+2022/07/02 13:16:04 server.go:249: checkSession
+2022/07/02 13:16:04 route_main.go:46: UserId 取得: test1@example.com
+2022/07/02 13:16:04 route_main.go:53: []
+2022/07/02 13:16:04 server.go:263: Finish checking login.
+2022/07/02 13:16:54 route_auth.go:91: ログイン処理
+2022/07/02 13:16:54 route_auth.go:63: login 後 session 情報を格納
+2022/07/02 13:16:54 route_auth.go:67: &{mysession 0xc0000de600 0xc000010058 0xc0000cc1e0 false 0xc0000de000}
+2022/07/02 13:16:54 server.go:249: checkSession
+2022/07/02 13:16:54 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:16:54 route_main.go:53: []
+2022/07/02 13:16:54 server.go:263: Finish checking login.
+2022/07/02 13:17:57 route_auth.go:91: ログイン処理
+2022/07/02 13:17:57 route_auth.go:63: login 後 session 情報を格納
+2022/07/02 13:17:57 route_auth.go:67: &{mysession 0xc0003cab00 0xc000010058 0xc00007e9b0 false 0xc0002fc100}
+2022/07/02 13:17:57 server.go:249: checkSession
+2022/07/02 13:17:57 route_main.go:46: UserId 取得: test@exmaple.com
+2022/07/02 13:17:57 route_main.go:53: []
+2022/07/02 13:17:57 server.go:263: Finish checking login.
+2022/07/02 13:21:28 route_auth.go:31: 登録画面取得
+2022/07/02 13:21:58 route_auth.go:31: 登録画面取得
+2022/07/02 13:24:38 route_auth.go:31: 登録画面取得
+2022/07/02 13:25:45 route_auth.go:31: 登録画面取得
+2022/07/02 13:27:27 route_main.go:27: top画面取得
+2022/07/02 13:27:37 route_main.go:27: top画面取得
+2022/07/02 13:27:58 route_main.go:27: top画面取得
+2022/07/02 13:28:00 route_auth.go:106: 登録画面取得
+2022/07/02 13:28:00 route_auth.go:107: ログアウト処理
+2022/07/02 13:28:08 route_main.go:27: top画面取得
+2022/07/02 13:28:16 route_main.go:27: top画面取得
+2022/07/02 13:28:22 route_main.go:27: top画面取得
+2022/07/02 13:28:35 route_auth.go:95: ログイン処理
+2022/07/02 13:28:35 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:28:35 route_auth.go:71: &{mysession 0xc00030b800 0xc0000bc040 0xc0000c4320 false 0xc00030a000}
+2022/07/02 13:28:35 server.go:250: checkSession
+2022/07/02 13:28:35 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:28:35 route_main.go:54: []
+2022/07/02 13:28:35 server.go:264: Finish checking login.
+2022/07/02 13:28:41 route_main.go:27: top画面取得
+2022/07/02 13:30:35 route_auth.go:106: 登録画面取得
+2022/07/02 13:30:35 route_auth.go:107: ログアウト処理
+2022/07/02 13:30:35 route_auth.go:77: セッション取得
+2022/07/02 13:30:35 route_auth.go:79: クリア処理
+2022/07/02 13:30:44 route_main.go:27: top画面取得
+2022/07/02 13:30:58 route_auth.go:95: ログイン処理
+2022/07/02 13:30:58 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:30:58 route_auth.go:71: &{mysession 0xc000481100 0xc000692030 0xc0004168c0 false 0xc000480400}
+2022/07/02 13:30:58 server.go:250: checkSession
+2022/07/02 13:30:58 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:30:58 route_main.go:54: []
+2022/07/02 13:30:58 server.go:264: Finish checking login.
+2022/07/02 13:31:01 route_main.go:27: top画面取得
+2022/07/02 13:36:06 route_main.go:27: top画面取得
+2022/07/02 13:36:49 route_auth.go:31: 登録画面取得
+2022/07/02 13:36:50 route_auth.go:31: 登録画面取得
+2022/07/02 13:36:56 route_auth.go:31: 登録画面取得
+2022/07/02 13:37:14 route_auth.go:31: 登録画面取得
+2022/07/02 13:38:05 route_main.go:27: top画面取得
+2022/07/02 13:38:10 route_auth.go:31: 登録画面取得
+2022/07/02 13:38:35 route_main.go:27: top画面取得
+2022/07/02 13:39:05 route_main.go:27: top画面取得
+2022/07/02 13:39:09 route_main.go:27: top画面取得
+2022/07/02 13:39:11 route_auth.go:31: 登録画面取得
+2022/07/02 13:40:15 route_main.go:27: top画面取得
+2022/07/02 13:40:20 route_auth.go:84: ログイン画面取得
+2022/07/02 13:41:07 route_auth.go:84: ログイン画面取得
+2022/07/02 13:41:10 route_auth.go:31: 登録画面取得
+2022/07/02 13:41:12 route_main.go:27: top画面取得
+2022/07/02 13:41:15 route_auth.go:84: ログイン画面取得
+2022/07/02 13:41:23 route_auth.go:96: ログイン処理
+2022/07/02 13:41:23 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:41:23 route_auth.go:71: &{mysession 0xc000436e00 0xc000010040 0xc0000c41e0 false 0xc000436100}
+2022/07/02 13:41:23 server.go:250: checkSession
+2022/07/02 13:41:23 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:41:23 route_main.go:54: []
+2022/07/02 13:41:23 server.go:264: Finish checking login.
+2022/07/02 13:41:27 route_main.go:27: top画面取得
+2022/07/02 13:42:04 route_auth.go:84: ログイン画面取得
+2022/07/02 13:42:05 route_auth.go:31: 登録画面取得
+2022/07/02 13:42:06 route_main.go:27: top画面取得
+2022/07/02 13:42:11 route_auth.go:84: ログイン画面取得
+2022/07/02 13:42:16 route_auth.go:96: ログイン処理
+2022/07/02 13:42:16 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:42:16 route_auth.go:71: &{mysession 0xc00016b700 0xc000408038 0xc00007e870 false 0xc00016a100}
+2022/07/02 13:42:16 server.go:250: checkSession
+2022/07/02 13:42:16 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:42:16 route_main.go:54: []
+2022/07/02 13:42:16 server.go:264: Finish checking login.
+2022/07/02 13:42:24 route_main.go:27: top画面取得
+2022/07/02 13:42:37 route_main.go:27: top画面取得
+2022/07/02 13:42:44 route_main.go:27: top画面取得
+2022/07/02 13:42:48 route_auth.go:31: 登録画面取得
+2022/07/02 13:42:49 route_auth.go:84: ログイン画面取得
+2022/07/02 13:42:55 route_auth.go:96: ログイン処理
+2022/07/02 13:42:55 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:42:55 route_auth.go:71: &{mysession 0xc000580d00 0xc000408038 0xc000416730 false 0xc00056a200}
+2022/07/02 13:42:55 server.go:250: checkSession
+2022/07/02 13:42:55 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:42:55 route_main.go:54: []
+2022/07/02 13:42:55 server.go:264: Finish checking login.
+2022/07/02 13:42:57 route_auth.go:103: 登録画面取得
+2022/07/02 13:42:57 route_auth.go:104: ログアウト処理
+2022/07/02 13:43:51 route_main.go:27: トップ画面取得
+2022/07/02 13:43:54 route_auth.go:31: 登録画面取得
+2022/07/02 13:43:55 route_auth.go:84: ログイン画面取得
+2022/07/02 13:43:59 route_auth.go:96: ログイン処理
+2022/07/02 13:43:59 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:43:59 route_auth.go:71: &{mysession 0xc000358400 0xc0000a8048 0xc00009e230 false 0xc00054d600}
+2022/07/02 13:43:59 server.go:250: checkSession
+2022/07/02 13:43:59 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:43:59 route_main.go:54: []
+2022/07/02 13:43:59 server.go:264: Finish checking login.
+2022/07/02 13:44:02 route_auth.go:103: ログアウト処理
+2022/07/02 13:44:02 route_auth.go:77: セッション取得
+2022/07/02 13:44:02 route_auth.go:79: クリア処理
+2022/07/02 13:44:02 route_main.go:27: トップ画面取得
+2022/07/02 13:44:14 route_auth.go:84: ログイン画面取得
+2022/07/02 13:44:17 route_auth.go:96: ログイン処理
+2022/07/02 13:44:17 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:44:17 route_auth.go:71: &{mysession 0xc00054c700 0xc0000a8048 0xc00040ab40 false 0xc00054c400}
+2022/07/02 13:44:17 server.go:250: checkSession
+2022/07/02 13:44:17 route_main.go:47: UserId 取得: test@exmaple.com
+2022/07/02 13:44:17 route_main.go:54: []
+2022/07/02 13:44:17 server.go:264: Finish checking login.
+2022/07/02 13:44:44 server.go:250: checkSession
+2022/07/02 13:44:44 server.go:264: Finish checking login.
+2022/07/02 13:44:46 server.go:250: checkSession
+2022/07/02 13:44:46 route_main.go:94: sql: no rows in result set
+2022/07/02 13:44:46 server.go:264: Finish checking login.
+2022/07/02 13:46:05 server.go:250: checkSession
+2022/07/02 13:46:05 route_main.go:94: sql: no rows in result set
+2022/07/02 13:46:05 server.go:264: Finish checking login.
+2022/07/02 13:48:04 server.go:250: checkSession
+2022/07/02 13:48:04 route_main.go:95: sql: no rows in result set
+2022/07/02 13:48:04 server.go:264: Finish checking login.
+2022/07/02 13:48:04 server.go:250: checkSession
+2022/07/02 13:48:04 route_main.go:48: UserId 取得: test@exmaple.com
+2022/07/02 13:48:04 route_main.go:55: []
+2022/07/02 13:48:04 server.go:264: Finish checking login.
+2022/07/02 13:48:07 server.go:250: checkSession
+2022/07/02 13:48:07 server.go:264: Finish checking login.
+2022/07/02 13:48:18 server.go:250: checkSession
+2022/07/02 13:48:18 route_main.go:95: sql: no rows in result set
+2022/07/02 13:48:18 server.go:264: Finish checking login.
+2022/07/02 13:48:18 server.go:250: checkSession
+2022/07/02 13:48:18 route_main.go:48: UserId 取得: test@exmaple.com
+2022/07/02 13:48:18 route_main.go:55: []
+2022/07/02 13:48:18 server.go:264: Finish checking login.
+2022/07/02 13:48:34 route_main.go:28: トップ画面取得
+2022/07/02 13:48:35 route_auth.go:84: ログイン画面取得
+2022/07/02 13:48:39 route_auth.go:96: ログイン処理
+2022/07/02 13:48:39 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:48:39 route_auth.go:71: &{mysession 0xc000664000 0xc000408080 0xc00007e4b0 false 0xc000616100}
+2022/07/02 13:48:39 server.go:250: checkSession
+2022/07/02 13:48:39 route_main.go:48: UserId 取得: test1@example.com
+2022/07/02 13:48:39 route_main.go:55: []
+2022/07/02 13:48:39 server.go:264: Finish checking login.
+2022/07/02 13:48:42 server.go:250: checkSession
+2022/07/02 13:48:42 server.go:264: Finish checking login.
+2022/07/02 13:48:43 server.go:250: checkSession
+2022/07/02 13:48:43 route_main.go:95: sql: no rows in result set
+2022/07/02 13:48:43 server.go:264: Finish checking login.
+2022/07/02 13:48:43 server.go:250: checkSession
+2022/07/02 13:48:43 route_main.go:48: UserId 取得: test1@example.com
+2022/07/02 13:48:43 route_main.go:55: []
+2022/07/02 13:48:43 server.go:264: Finish checking login.
+2022/07/02 13:51:43 server.go:250: checkSession
+2022/07/02 13:51:43 route_main.go:48: UserId 取得: test1@example.com
+2022/07/02 13:51:43 route_main.go:55: []
+2022/07/02 13:51:43 server.go:264: Finish checking login.
+2022/07/02 13:51:44 server.go:250: checkSession
+2022/07/02 13:51:44 route_main.go:48: UserId 取得: test1@example.com
+2022/07/02 13:51:44 route_main.go:55: []
+2022/07/02 13:51:44 server.go:264: Finish checking login.
+2022/07/02 13:52:00 server.go:250: checkSession
+2022/07/02 13:52:00 server.go:264: Finish checking login.
+2022/07/02 13:52:01 server.go:250: checkSession
+2022/07/02 13:52:01 route_main.go:96: UserId 取得: test1@example.com
+2022/07/02 13:52:01 server.go:264: Finish checking login.
+2022/07/02 13:52:01 server.go:250: checkSession
+2022/07/02 13:52:01 route_main.go:48: UserId 取得: test1@example.com
+2022/07/02 13:52:01 route_main.go:55: [{6 aaa 2 2022-07-02 13:52:01.848258 +0900 +0900}]
+2022/07/02 13:52:01 server.go:264: Finish checking login.
+2022/07/02 13:52:22 route_main.go:28: トップ画面取得
+2022/07/02 13:52:23 route_auth.go:84: ログイン画面取得
+2022/07/02 13:52:27 route_auth.go:96: ログイン処理
+2022/07/02 13:52:27 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:52:27 route_auth.go:71: &{mysession 0xc0005fef00 0xc000408038 0xc000126230 false 0xc0005fe200}
+2022/07/02 13:52:27 server.go:250: checkSession
+2022/07/02 13:52:27 route_main.go:48: UserId 取得: test@exmaple.com
+2022/07/02 13:52:27 route_main.go:55: []
+2022/07/02 13:52:27 server.go:264: Finish checking login.
+2022/07/02 13:52:31 route_main.go:28: トップ画面取得
+2022/07/02 13:52:31 route_auth.go:31: 登録画面取得
+2022/07/02 13:52:32 route_auth.go:84: ログイン画面取得
+2022/07/02 13:53:34 route_main.go:28: トップ画面取得
+2022/07/02 13:53:35 route_auth.go:84: ログイン画面取得
+2022/07/02 13:53:38 route_auth.go:100: PW が間違っています
+2022/07/02 13:53:38 route_auth.go:84: ログイン画面取得
+2022/07/02 13:53:48 route_auth.go:91: sql: no rows in result set
+2022/07/02 13:53:48 route_auth.go:100: PW が間違っています
+2022/07/02 13:53:48 route_auth.go:84: ログイン画面取得
+2022/07/02 13:54:46 route_auth.go:96: ログイン処理
+2022/07/02 13:54:46 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:54:46 route_auth.go:71: &{mysession 0xc0002b0600 0xc000010050 0xc00007e280 false 0xc0002b0100}
+2022/07/02 13:54:46 server.go:250: checkSession
+2022/07/02 13:54:46 route_main.go:48: UserId 取得: test@exmaple.com
+2022/07/02 13:54:46 route_main.go:55: []
+2022/07/02 13:54:46 server.go:264: Finish checking login.
+2022/07/02 13:54:48 route_main.go:28: トップ画面取得
+2022/07/02 13:54:49 route_auth.go:84: ログイン画面取得
+2022/07/02 13:54:52 route_auth.go:100: PW が間違っています
+2022/07/02 13:54:52 route_auth.go:84: ログイン画面取得
+2022/07/02 13:55:07 route_auth.go:91: sql: no rows in result set
+2022/07/02 13:55:07 route_auth.go:100: PW が間違っています
+2022/07/02 13:55:07 route_auth.go:84: ログイン画面取得
+2022/07/02 13:55:22 route_auth.go:96: ログイン処理
+2022/07/02 13:55:22 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:55:22 route_auth.go:71: &{mysession 0xc0001cf400 0xc000010050 0xc0000cc370 false 0xc0001ce100}
+2022/07/02 13:55:22 server.go:250: checkSession
+2022/07/02 13:55:22 route_main.go:48: UserId 取得: test1@example.com
+2022/07/02 13:55:22 route_main.go:55: [{6 aaa 2 2022-07-02 13:52:01.848258 +0900 +0900}]
+2022/07/02 13:55:22 server.go:264: Finish checking login.
+2022/07/02 13:55:51 route_main.go:28: トップ画面取得
+2022/07/02 13:55:52 route_auth.go:84: ログイン画面取得
+2022/07/02 13:55:55 route_auth.go:96: ログイン処理
+2022/07/02 13:55:55 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 13:55:55 route_auth.go:71: &{mysession 0xc0000dee00 0xc000010050 0xc0004164b0 false 0xc0000de100}
+2022/07/02 13:55:55 server.go:250: checkSession
+2022/07/02 13:55:55 route_main.go:48: UserId 取得: test@exmaple.com
+2022/07/02 13:55:55 route_main.go:55: []
+2022/07/02 13:55:55 server.go:264: Finish checking login.
+2022/07/02 13:55:56 server.go:250: checkSession
+2022/07/02 13:55:56 server.go:264: Finish checking login.
+2022/07/02 13:55:57 server.go:250: checkSession
+2022/07/02 13:55:57 route_main.go:96: UserId 取得: test@exmaple.com
+2022/07/02 13:55:57 server.go:264: Finish checking login.
+2022/07/02 13:55:57 server.go:250: checkSession
+2022/07/02 13:55:57 route_main.go:48: UserId 取得: test@exmaple.com
+2022/07/02 13:55:57 route_main.go:55: [{7 bbb 1 2022-07-02 13:55:57.908781 +0900 +0900}]
+2022/07/02 13:55:57 server.go:264: Finish checking login.
+2022/07/02 14:07:49 route_main.go:28: トップ画面取得
+2022/07/02 14:07:50 route_auth.go:84: ログイン画面取得
+2022/07/02 14:07:53 route_auth.go:96: ログイン処理
+2022/07/02 14:07:53 route_auth.go:67: login 後 session 情報を格納
+2022/07/02 14:07:53 route_auth.go:71: &{mysession 0xc0001cae00 0xc0000c4040 0xc0003a21e0 false 0xc0001ca100}
+2022/07/02 14:07:53 server.go:250: checkSession
+2022/07/02 14:07:53 route_main.go:55: [{7 bbb 1 2022-07-02 13:55:57.908781 +0900 +0900}]
+2022/07/02 14:07:53 server.go:264: Finish checking login.
+2022/07/02 14:08:02 server.go:250: checkSession
+2022/07/02 14:08:02 server.go:264: Finish checking login.
+2022/07/02 14:08:11 server.go:250: checkSession
+2022/07/02 14:08:11 server.go:264: Finish checking login.
+2022/07/02 14:08:40 server.go:250: checkSession
+2022/07/02 14:08:40 server.go:264: Finish checking login.
+2022/07/02 14:08:48 server.go:250: checkSession
+2022/07/02 14:08:48 server.go:264: Finish checking login.
+2022/07/02 14:11:16 server.go:250: checkSession
+2022/07/02 14:11:16 server.go:264: Finish checking login.
+2022/07/02 14:11:24 server.go:250: checkSession
+2022/07/02 14:11:24 server.go:264: Finish checking login.
+2022/07/02 14:11:24 server.go:250: checkSession
+2022/07/02 14:11:24 route_main.go:55: [{7 bbbaaa 1 2022-07-02 13:55:57.908781 +0900 +0900}]
+2022/07/02 14:11:24 server.go:264: Finish checking login.
+2022/07/02 14:11:33 server.go:250: checkSession
+2022/07/02 14:11:33 server.go:264: Finish checking login.
+2022/07/02 14:14:05 server.go:250: checkSession
+2022/07/02 14:14:05 server.go:264: Finish checking login.
+2022/07/02 14:14:05 server.go:250: checkSession
+2022/07/02 14:14:05 route_main.go:55: []
+2022/07/02 14:14:05 server.go:264: Finish checking login.
+2022/07/02 14:14:09 server.go:250: checkSession
+2022/07/02 14:14:09 server.go:264: Finish checking login.
+2022/07/02 14:14:11 server.go:250: checkSession
+2022/07/02 14:14:11 server.go:264: Finish checking login.
+2022/07/02 14:14:11 server.go:250: checkSession
+2022/07/02 14:14:11 route_main.go:55: [{8 aaa 1 2022-07-02 14:14:11.559855 +0900 +0900}]
+2022/07/02 14:14:11 server.go:264: Finish checking login.
+2022/07/02 14:14:18 server.go:250: checkSession
+2022/07/02 14:14:18 server.go:264: Finish checking login.
+2022/07/02 14:14:20 server.go:250: checkSession
+2022/07/02 14:14:20 server.go:264: Finish checking login.
+2022/07/02 14:14:20 server.go:250: checkSession
+2022/07/02 14:14:20 route_main.go:55: [{8 aaa 1 2022-07-02 14:14:11.559855 +0900 +0900} {9 bbb 1 2022-07-02 14:14:20.096366 +0900 +0900}]
+2022/07/02 14:14:20 server.go:264: Finish checking login.
+2022/07/02 14:14:24 server.go:250: checkSession
+2022/07/02 14:14:24 server.go:264: Finish checking login.
+2022/07/02 14:14:24 server.go:250: checkSession
+2022/07/02 14:14:24 route_main.go:55: [{8 aaa 1 2022-07-02 14:14:11.559855 +0900 +0900}]
+2022/07/02 14:14:24 server.go:264: Finish checking login.
+2022/07/02 14:14:27 server.go:250: checkSession
+2022/07/02 14:14:27 server.go:264: Finish checking login.
+2022/07/02 14:14:29 server.go:250: checkSession
+2022/07/02 14:14:29 server.go:264: Finish checking login.
+2022/07/02 14:14:29 server.go:250: checkSession
+2022/07/02 14:14:29 route_main.go:55: [{8 bbb 1 2022-07-02 14:14:11.559855 +0900 +0900}]
+2022/07/02 14:14:29 server.go:264: Finish checking login.
+2022/07/02 14:14:38 server.go:250: checkSession
+2022/07/02 14:14:38 server.go:264: Finish checking login.
+2022/07/02 14:14:40 server.go:250: checkSession
+2022/07/02 14:14:40 server.go:264: Finish checking login.
+2022/07/02 14:14:40 server.go:250: checkSession
+2022/07/02 14:14:40 route_main.go:55: [{8 ccc 1 2022-07-02 14:14:11.559855 +0900 +0900}]
+2022/07/02 14:14:40 server.go:264: Finish checking login.
+2022/07/02 14:16:38 route_main.go:15: トップ画面取得
+2022/07/02 14:19:20 route_main.go:15: トップ画面取得
+2022/07/02 14:22:22 route_main.go:15: トップ画面取得
+2022/07/02 14:44:37 base.go:80: initializing...DONE!!!!
+2022/07/02 14:44:52 base.go:80: initializing...DONE!!!!
+2022/07/02 14:45:11 base.go:80: initializing...DONE!!!!
+2022/07/02 14:45:21 route_main.go:15: TOP画面取得
+2022/07/02 14:45:21 route_main.go:15: TOP画面取得
+2022/07/02 14:45:25 route_main.go:15: TOP画面取得
+2022/07/02 14:45:26 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:45:27 route_auth.go:72: ログイン画面取得
+2022/07/02 14:45:31 route_auth.go:72: ログイン画面取得
+2022/07/02 14:45:43 base.go:80: initializing...DONE!!!!
+2022/07/02 14:45:56 route_auth.go:79: sql: no rows in result set
+2022/07/02 14:45:56 route_auth.go:89: PW が間違っています
+2022/07/02 14:45:56 route_auth.go:72: ログイン画面取得
+2022/07/02 14:46:02 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:47:37 base.go:80: initializing...DONE!!!!
+2022/07/02 14:47:40 route_auth.go:72: ログイン画面取得
+2022/07/02 14:47:45 route_auth.go:79: sql: no rows in result set
+2022/07/02 14:47:45 route_auth.go:80: ユーザがいません
+2022/07/02 14:47:45 route_auth.go:72: ログイン画面取得
+2022/07/02 14:47:50 route_auth.go:72: ログイン画面取得
+2022/07/02 14:47:52 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:47:56 route_auth.go:38: ログイン処理
+2022/07/02 14:47:56 route_auth.go:55: ログイン
+2022/07/02 14:47:56 route_auth.go:44: TODO画面にリダイレクト
+2022/07/02 14:47:56 server.go:249: checkSession
+2022/07/02 14:47:56 route_main.go:33: TODO画面取得
+2022/07/02 14:47:56 server.go:263: Finish checking login.
+2022/07/02 14:48:31 route_main.go:15: TOP画面取得
+2022/07/02 14:48:33 route_auth.go:72: ログイン画面取得
+2022/07/02 14:48:38 route_auth.go:88: PW が間違っています
+2022/07/02 14:48:38 route_auth.go:72: ログイン画面取得
+2022/07/02 14:48:43 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:48:46 route_auth.go:72: ログイン画面取得
+2022/07/02 14:48:48 route_auth.go:84: ログイン処理
+2022/07/02 14:48:48 route_auth.go:55: ログイン
+2022/07/02 14:48:48 server.go:249: checkSession
+2022/07/02 14:48:48 route_main.go:33: TODO画面取得
+2022/07/02 14:48:48 server.go:263: Finish checking login.
+2022/07/02 14:48:56 server.go:249: checkSession
+2022/07/02 14:48:56 route_main.go:41: TODO作成画面取得
+2022/07/02 14:48:56 server.go:263: Finish checking login.
+2022/07/02 14:48:59 server.go:249: checkSession
+2022/07/02 14:48:59 route_main.go:59: TODO保存
+2022/07/02 14:48:59 route_main.go:64: TODO画面にリダイレクト
+2022/07/02 14:48:59 server.go:263: Finish checking login.
+2022/07/02 14:48:59 server.go:249: checkSession
+2022/07/02 14:48:59 route_main.go:33: TODO画面取得
+2022/07/02 14:48:59 server.go:263: Finish checking login.
+2022/07/02 14:49:00 server.go:249: checkSession
+2022/07/02 14:49:00 route_main.go:88: TODO編集画面取得
+2022/07/02 14:49:00 server.go:263: Finish checking login.
+2022/07/02 14:49:03 server.go:249: checkSession
+2022/07/02 14:49:03 route_main.go:112: TODO更新
+2022/07/02 14:49:03 route_main.go:117: TODO画面にリダイレクト
+2022/07/02 14:49:03 server.go:263: Finish checking login.
+2022/07/02 14:49:03 server.go:249: checkSession
+2022/07/02 14:49:03 route_main.go:33: TODO画面取得
+2022/07/02 14:49:03 server.go:263: Finish checking login.
+2022/07/02 14:49:03 server.go:249: checkSession
+2022/07/02 14:49:03 route_main.go:133: TODO削除
+2022/07/02 14:49:03 route_main.go:138: TODO画面にリダイレクト
+2022/07/02 14:49:03 server.go:263: Finish checking login.
+2022/07/02 14:49:03 server.go:249: checkSession
+2022/07/02 14:49:03 route_main.go:33: TODO画面取得
+2022/07/02 14:49:03 server.go:263: Finish checking login.
+2022/07/02 14:49:05 route_main.go:15: TOP画面取得
+2022/07/02 14:49:07 route_auth.go:72: ログイン画面取得
+2022/07/02 14:49:09 route_auth.go:84: ログイン処理
+2022/07/02 14:49:09 route_auth.go:55: ログイン
+2022/07/02 14:49:09 server.go:249: checkSession
+2022/07/02 14:49:09 route_main.go:33: TODO画面取得
+2022/07/02 14:49:09 server.go:263: Finish checking login.
+2022/07/02 14:49:22 server.go:249: checkSession
+2022/07/02 14:49:22 route_main.go:41: TODO作成画面取得
+2022/07/02 14:49:22 server.go:263: Finish checking login.
+2022/07/02 14:49:23 server.go:249: checkSession
+2022/07/02 14:49:23 route_main.go:59: TODO保存
+2022/07/02 14:49:23 route_main.go:64: TODO画面にリダイレクト
+2022/07/02 14:49:23 server.go:263: Finish checking login.
+2022/07/02 14:49:23 server.go:249: checkSession
+2022/07/02 14:49:23 route_main.go:33: TODO画面取得
+2022/07/02 14:49:23 server.go:263: Finish checking login.
+2022/07/02 14:49:27 server.go:249: checkSession
+2022/07/02 14:49:27 route_main.go:133: TODO削除
+2022/07/02 14:49:27 route_main.go:138: TODO画面にリダイレクト
+2022/07/02 14:49:27 server.go:263: Finish checking login.
+2022/07/02 14:49:27 server.go:249: checkSession
+2022/07/02 14:49:27 route_main.go:33: TODO画面取得
+2022/07/02 14:49:27 server.go:263: Finish checking login.
+2022/07/02 14:49:28 server.go:249: checkSession
+2022/07/02 14:49:28 route_main.go:41: TODO作成画面取得
+2022/07/02 14:49:28 server.go:263: Finish checking login.
+2022/07/02 14:49:29 server.go:249: checkSession
+2022/07/02 14:49:29 route_main.go:59: TODO保存
+2022/07/02 14:49:29 route_main.go:64: TODO画面にリダイレクト
+2022/07/02 14:49:29 server.go:263: Finish checking login.
+2022/07/02 14:49:29 server.go:249: checkSession
+2022/07/02 14:49:29 route_main.go:33: TODO画面取得
+2022/07/02 14:49:29 server.go:263: Finish checking login.
+2022/07/02 14:49:33 server.go:249: checkSession
+2022/07/02 14:49:33 route_main.go:88: TODO編集画面取得
+2022/07/02 14:49:33 server.go:263: Finish checking login.
+2022/07/02 14:49:36 server.go:249: checkSession
+2022/07/02 14:49:36 route_main.go:112: TODO更新
+2022/07/02 14:49:36 route_main.go:117: TODO画面にリダイレクト
+2022/07/02 14:49:36 server.go:263: Finish checking login.
+2022/07/02 14:49:36 server.go:249: checkSession
+2022/07/02 14:49:36 route_main.go:33: TODO画面取得
+2022/07/02 14:49:36 server.go:263: Finish checking login.
+2022/07/02 14:49:39 route_main.go:15: TOP画面取得
+2022/07/02 14:50:19 base.go:80: initializing...DONE!!!!
+2022/07/02 14:52:57 server.go:206: checkSession
+2022/07/02 14:52:57 route_main.go:33: TODO画面取得
+2022/07/02 14:52:57 server.go:220: Finish checking login.
+2022/07/02 14:52:59 route_main.go:15: TOP画面取得
+2022/07/02 14:53:08 server.go:206: checkSession
+2022/07/02 14:53:08 route_main.go:33: TODO画面取得
+2022/07/02 14:53:08 server.go:220: Finish checking login.
+2022/07/02 14:53:12 route_main.go:15: TOP画面取得
+2022/07/02 14:53:20 base.go:80: initializing...DONE!!!!
+2022/07/02 14:54:12 base.go:80: initializing...DONE!!!!
+2022/07/02 14:55:27 base.go:80: initializing...DONE!!!!
+2022/07/02 14:55:40 route_main.go:15: TOP画面取得
+2022/07/02 14:55:51 route_auth.go:72: ログイン画面取得
+2022/07/02 14:55:51 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:55:52 route_main.go:15: TOP画面取得
+2022/07/02 14:55:53 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:55:53 route_auth.go:72: ログイン画面取得
+2022/07/02 14:56:05 server.go:209: セッションチェック開始
+2022/07/02 14:56:05 server.go:213: ユーザID: test@exmaple.com
+2022/07/02 14:56:05 route_main.go:33: TODO画面取得
+2022/07/02 14:56:05 server.go:228: セッションチェック終了
+2022/07/02 14:56:17 route_main.go:15: TOP画面取得
+2022/07/02 14:56:25 route_main.go:15: TOP画面取得
+2022/07/02 14:56:27 route_auth.go:72: ログイン画面取得
+2022/07/02 14:56:28 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:56:28 route_main.go:15: TOP画面取得
+2022/07/02 14:56:32 server.go:209: セッションチェック開始
+2022/07/02 14:56:32 server.go:3160: http: panic serving [::1]:61413: interface conversion: interface {} is nil, not string
+goroutine 80 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc0005605d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0003fc480, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc0005605d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc0003fc600, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc0005605d0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc0000de100)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc0000de100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0000de100)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc0000de100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0003dc2a0}, 0xc000679d00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000252cf0}, {0x49d3458, 0xc0003dc2a0}, 0xc000679d00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000398460, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:56:32 server.go:209: セッションチェック開始
+2022/07/02 14:56:32 server.go:3160: http: panic serving [::1]:61410: interface conversion: interface {} is nil, not string
+goroutine 82 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc000396810})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00063a480, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000396810})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00063a600, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000396810})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc00028a600)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc00028a600)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00028a600)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc00028a600)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0000e01c0}, 0xc00028b400)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0000b3290}, {0x49d3458, 0xc0000e01c0}, 0xc00028b400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000488280, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:56:32 server.go:209: セッションチェック開始
+2022/07/02 14:56:32 server.go:3160: http: panic serving [::1]:61412: interface conversion: interface {} is nil, not string
+goroutine 79 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc000708810})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00067bc80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000708810})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00067be00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000708810})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc000239d00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc000239d00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc000239d00)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc000239d00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0001c8620}, 0xc00028b300)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000252f60}, {0x49d3458, 0xc0001c8620}, 0xc00028b300)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000398320, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:56:32 server.go:209: セッションチェック開始
+2022/07/02 14:56:32 server.go:3160: http: panic serving [::1]:61411: interface conversion: interface {} is nil, not string
+goroutine 78 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc0007089f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000284a80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc0007089f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000284c00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc0007089f0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc00028ba00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc00028ba00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc00028ba00)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc00028ba00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0001c87e0}, 0xc00028b100)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000252e10}, {0x49d3458, 0xc0001c87e0}, 0xc00028b100)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003981e0, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:56:32 server.go:209: セッションチェック開始
+2022/07/02 14:56:32 server.go:3160: http: panic serving [::1]:61421: interface conversion: interface {} is nil, not string
+goroutine 87 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc000708bd0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000285080, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000708bd0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000285200, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000708bd0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc0005ea200)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc0005ea200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0005ea200)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc0005ea200)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0001c89a0}, 0xc000238000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0004803f0}, {0x49d3458, 0xc0001c89a0}, 0xc000238000)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000434000, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:56:33 server.go:209: セッションチェック開始
+2022/07/02 14:56:33 server.go:3160: http: panic serving [::1]:61423: interface conversion: interface {} is nil, not string
+goroutine 116 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc000708ed0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000285680, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000708ed0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000285800, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000708ed0})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc0005eac00)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc0005eac00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0005eac00)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc0005eac00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0001c8a80}, 0xc0005eab00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000708cf0}, {0x49d3458, 0xc0001c8a80}, 0xc0005eab00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000488500, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:56:38 server.go:209: セッションチェック開始
+2022/07/02 14:56:38 server.go:3160: http: panic serving [::1]:61425: interface conversion: interface {} is nil, not string
+goroutine 118 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc000709170})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000285c80, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000709170})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc000285e00, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000709170})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc0005eb500)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc0005eb500)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0005eb500)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc0005eb500)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0001c8b60}, 0xc0005eb400)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000708f90}, {0x49d3458, 0xc0001c8b60}, 0xc0005eb400)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000488aa0, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:57:08 server.go:209: セッションチェック開始
+2022/07/02 14:57:08 server.go:3160: http: panic serving [::1]:61448: interface conversion: interface {} is nil, not string
+goroutine 31 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1802 +0xb9
+panic({0x4809400, 0xc000397290})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1047 +0x266
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00063b080, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000397290})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End·dwrap·12()
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:359 +0x2a
+go.opentelemetry.io/otel/sdk/trace.(*recordingSpan).End(0xc00063b200, {0x0, 0x0, 0x0})
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/otel/sdk@v1.7.0/trace/span.go:398 +0x9a2
+panic({0x4809400, 0xc000397290})
+	/usr/local/Cellar/go/1.17.6/libexec/src/runtime/panic.go:1038 +0x215
+TodoApp/app/controllers.checkSession.func1(0xc0001f1000)
+	/Users/zuck3rx/Desktop/ntt-tec-2022/TodoApp/app/controllers/server.go:213 +0x414
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-contrib/sessions.Sessions.func1(0xc0001f1000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-contrib/sessions@v0.0.5/sessions.go:54 +0x18d
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin.Middleware.func1(0xc0001f1000)
+	/Users/zuck3rx/gocode/pkg/mod/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.32.0/gintrace.go:80 +0x648
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000931e0, 0xc0001f1000)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616 +0x671
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000931e0, {0x49d3458, 0xc0000e02a0}, 0xc0001f0f00)
+	/Users/zuck3rx/gocode/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000396cc0}, {0x49d3458, 0xc0000e02a0}, 0xc0001f0f00)
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000398820, {0x49d8120, 0xc0000b2390})
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.17.6/libexec/src/net/http/server.go:3034 +0x4e8
+2022/07/02 14:57:53 base.go:80: initializing...DONE!!!!
+2022/07/02 14:58:03 server.go:209: セッションチェック開始
+2022/07/02 14:58:03 server.go:215: ログインしていません
+2022/07/02 14:58:03 server.go:227: セッションチェック終了
+2022/07/02 14:58:03 route_auth.go:72: ログイン画面取得
+2022/07/02 14:58:13 route_auth.go:16: ユーザ登録画面取得
+2022/07/02 14:58:20 route_auth.go:38: ログイン処理
+2022/07/02 14:58:20 route_auth.go:55: ログイン
+2022/07/02 14:58:20 route_auth.go:44: TODO画面にリダイレクト
+2022/07/02 14:58:20 server.go:209: セッションチェック開始
+2022/07/02 14:58:20 route_main.go:33: TODO画面取得
+2022/07/02 14:58:20 server.go:227: セッションチェック終了
+2022/07/02 14:58:22 route_auth.go:65: ログアウト
+2022/07/02 14:58:22 route_auth.go:102: TOP画面にリダイレクト
+2022/07/02 14:58:22 route_main.go:15: TOP画面取得
+2022/07/02 14:58:23 route_auth.go:72: ログイン画面取得
+2022/07/02 14:58:28 route_auth.go:84: ログイン処理
+2022/07/02 14:58:28 route_auth.go:55: ログイン
+2022/07/02 14:58:28 server.go:209: セッションチェック開始
+2022/07/02 14:58:28 route_main.go:33: TODO画面取得
+2022/07/02 14:58:28 server.go:227: セッションチェック終了
+2022/07/02 14:58:30 route_main.go:15: TOP画面取得
+2022/07/02 14:58:31 route_auth.go:72: ログイン画面取得
+2022/07/02 14:58:35 route_auth.go:84: ログイン処理
+2022/07/02 14:58:35 route_auth.go:55: ログイン
+2022/07/02 14:58:35 server.go:209: セッションチェック開始
+2022/07/02 14:58:35 route_main.go:33: TODO画面取得
+2022/07/02 14:58:35 server.go:227: セッションチェック終了
