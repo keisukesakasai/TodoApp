@@ -20,8 +20,12 @@ func index(c *gin.Context) {
 	_, span := tracer.Start(c.Request.Context(), "TODO画面取得")
 	defer span.End()
 
-	UserId, _ := c.Get("UserId")
-	user, err := models.GetUserByEmail(c, UserId.(string))
+	// UserId, _ := c.Get("UserId")
+	UserId, err := c.Cookie("UserId")
+	if err != nil {
+		log.Println(err)
+	}
+	user, err := models.GetUserByEmail(c, UserId)
 	if err != nil {
 		log.Println(err)
 	}

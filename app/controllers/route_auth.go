@@ -83,7 +83,9 @@ func postLogin(c *gin.Context) {
 		UserId := c.PostForm("email")
 		log.Println("ログイン処理")
 		login(c, UserId)
-		c.Redirect(http.StatusMovedPermanently, "/menu/todos")
+		c.SetCookie("UserId", user.Email, 60, "/", "localhost", false, true)
+		index(c)
+		// c.Redirect(http.StatusMovedPermanently, "/menu/todos")
 	} else {
 		log.Println("PW が間違っています")
 		c.Redirect(http.StatusFound, "/login")

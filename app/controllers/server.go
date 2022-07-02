@@ -19,7 +19,6 @@ import (
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
-	"go.opentelemetry.io/contrib/propagators/aws/xray"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
@@ -81,14 +80,14 @@ func initProvider() (func(context.Context) error, error) {
 			return nil, fmt.Errorf("failed to create trace exporter: %w", err)
 		}
 
-		idg := xray.NewIDGenerator()
+		// idg := xray.NewIDGenerator()
 
 		bsp := sdktrace.NewBatchSpanProcessor(traceExporter)
 		tracerProvider := sdktrace.NewTracerProvider(
 			sdktrace.WithSampler(sdktrace.AlwaysSample()),
 			sdktrace.WithResource(res),
 			sdktrace.WithSpanProcessor(bsp),
-			sdktrace.WithIDGenerator(idg),
+			// sdktrace.WithIDGenerator(idg),
 		)
 
 		otel.SetTracerProvider(tracerProvider)
@@ -115,20 +114,11 @@ var validPath = regexp.MustCompile("^/menu/todos/(edit|save|update|delete)/([0-9
 
 func parseURL(fn func(*gin.Context, int)) gin.HandlerFunc {
 	return func(c *gin.Context) {
-
 		_, span := tracer.Start(c.Request.Context(), "parseURL")
 		defer span.End()
 
-		fmt.Println("===parseURL")
 		fmt.Println(c.Request.URL.Path)
-		fmt.Println("===parseURL")
-
 		q := validPath.FindStringSubmatch(c.Request.URL.Path)
-
-		fmt.Println("===parseURL")
-		fmt.Println(q)
-		fmt.Println("===parseURL")
-
 		if q == nil {
 			http.NotFound(c.Writer, c.Request)
 			return
@@ -175,15 +165,12 @@ func StartMainServer() {
 	r.Static("/static/", config.Config.Static)
 
 	//--- handler 設定
-
 	r.GET("/", top)
 	r.GET("/login", getLogin)
 	r.POST("/login", postLogin)
 
 	r.GET("/signup", getSignup)
 	r.POST("/signup", postSignup)
-
-	// r.POST("/authenticate", authenticate)
 
 	rTodos := r.Group("/menu")
 	rTodos.Use(checkSession())
